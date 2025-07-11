@@ -236,7 +236,7 @@ function App() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            {/* <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
                   icon: Users,
@@ -274,7 +274,7 @@ function App() {
                   </p>
                 </div>
               ))}
-            </div>
+            </div> */}
 
           </div>
         </div>
@@ -383,9 +383,9 @@ function App() {
               },
               {
                 name: "VIKI SIR",
-                role: "Global Expert",
-                exp: "IDI Founder",
-                club: "World Renowned",
+                role: "Big Wings Factory",
+                exp: "4+ years",
+                club: "Big Wings Factory",
                 tag: "Global Expert",
                 tagColor: "yellow",
                 icon: <Award className="w-4 h-4 text-yellow-400 mr-1" />,
@@ -487,984 +487,1083 @@ function App() {
 
       {/* Requirements Section */}
       <section id="requirements" className="py-24 bg-gradient-to-br from-slate-50 via-purple-50 to-pink-50 relative overflow-hidden">
-  {/* Floating Decorations */}
-  <div className="absolute inset-0 opacity-10 pointer-events-none">
-    <div className="absolute top-20 left-20 animate-float">
-      <Feather className="w-32 h-32 text-purple-600 rotate-12" />
-    </div>
-    <div className="absolute bottom-20 right-20 animate-float animation-delay-2000">
-      <Feather className="w-24 h-24 text-pink-600 -rotate-45" />
-    </div>
-  </div>
+        {/* Floating Decorations */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-20 left-20 animate-float">
+            <Feather className="w-32 h-32 text-purple-600 rotate-12" />
+          </div>
+          <div className="absolute bottom-20 right-20 animate-float animation-delay-2000">
+            <Feather className="w-24 h-24 text-pink-600 -rotate-45" />
+          </div>
+        </div>
 
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div className="max-w-7xl mx-auto">
-      {/* Heading */}
-      <div className="text-center mb-20">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-800 via-pink-700 to-orange-600 bg-clip-text text-transparent mb-6">
-          Racing Strategy
-        </h2>
-        <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed px-4">
-          Essential guidelines and standards for participating in our racing events and breeding programs.
-        </p>
-      </div>
-
-      {/* Strategy Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {[
-          {
-            title: "Selection of birds",
-            short: "Focus on performance, genetics, and body structure.",
-            full: "Choosing the right racing pigeons is the foundation of a winning loft. Selection should focus on proven performance, strong genetics, and physical qualities like a well-muscled body, balanced wing structure, and healthy plumage.",
-          },
-          {
-            title: "Pairing and breeding",
-            short: "Smart pairing creates competitive offspring.",
-            full: "Successful racing starts with smart pairing and strong breeding. Breeding pairs should be selected based on performance, bloodline, and traits. Pairing a speed bird with a stamina bird balances traits for all distances.",
-          },
-          {
-            title: "Race preparation and conditions",
-            short: "Training, nutrition & timing for peak performance.",
-            full: "Birds need a structured training schedule combining loft flying and road work. Feeding should be adjusted to increase energy, and weather and health must be monitored before selecting race participants.",
-          },
-          {
-            title: "Loft maintenance",
-            short: "Hygiene ensures health and peak fitness.",
-            full: "A clean, well-ventilated loft prevents disease and reduces stress. Regular cleaning, disinfection, and parasite control boost immunity and keep pigeons race-ready.",
-          },
-        ].map((item, index) => (
-          <div
-            key={index}
-            className="group relative overflow-hidden bg-white/40 backdrop-blur-lg rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105"
-          >
-            {/* Card Top */}
-            <div className="p-6 sm:p-8 flex flex-col items-center text-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                <Trophy className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">{item.title}</h3>
-              <p className="text-sm sm:text-base text-gray-700">{item.short}</p>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            {/* Heading */}
+            <div className="text-center mb-20">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-800 via-pink-700 to-orange-600 bg-clip-text text-transparent mb-6">
+                Racing Strategy
+              </h2>
+              <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed px-4">
+                Essential guidelines and standards for participating in our racing events and breeding programs.
+              </p>
             </div>
 
-            {/* Slide-up Drawer with Glass Effect */}
-            <div className="absolute bottom-0 left-0 w-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-20">
-              <div className="bg-white/70 backdrop-blur-xl border-t border-gradient-to-r from-yellow-400 via-orange-400 to-pink-400 rounded-b-3xl p-6 text-gray-800 shadow-inner">
-                <p className="text-sm sm:text-base leading-relaxed font-medium">{item.full}</p>
-              </div>
+            {/* Strategy Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {[
+                {
+                  title: "Selection of birds",
+                  short: "Focus on performance, genetics, and body structure.",
+                  full: "Choosing the right racing pigeons is the foundation of a winning loft. Selection should focus on proven performance, strong genetics, and physical qualities like a well-muscled body, balanced wing structure, and healthy plumage.",
+                },
+                {
+                  title: "Pairing and breeding",
+                  short: "Smart pairing creates competitive offspring.",
+                  full: "Successful racing starts with smart pairing and strong breeding. Breeding pairs should be selected based on performance, bloodline, and traits. Pairing a speed bird with a stamina bird balances traits for all distances.",
+                },
+                {
+                  title: "Race preparation and conditions",
+                  short: "Training, nutrition & timing for peak performance.",
+                  full: "Birds need a structured training schedule combining loft flying and road work. Feeding should be adjusted to increase energy, and weather and health must be monitored before selecting race participants.",
+                },
+                {
+                  title: "Loft maintenance",
+                  short: "Hygiene ensures health and peak fitness.",
+                  full: "A clean, well-ventilated loft prevents disease and reduces stress. Regular cleaning, disinfection, and parasite control boost immunity and keep pigeons race-ready.",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="group relative overflow-hidden bg-white/40 backdrop-blur-lg rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105"
+                >
+                  {/* Card Top */}
+                  <div className="p-6 sm:p-8 flex flex-col items-center text-center">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <Trophy className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">{item.title}</h3>
+                    <p className="text-sm sm:text-base text-gray-700">{item.short}</p>
+                  </div>
+
+                  {/* Slide-up Drawer with Glass Effect */}
+                  <div className="absolute bottom-0 left-0 w-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-20">
+                    <div className="bg-white/70 backdrop-blur-xl border-t border-gradient-to-r from-yellow-400 via-orange-400 to-pink-400 rounded-b-3xl p-6 text-gray-800 shadow-inner">
+                      <p className="text-sm sm:text-base leading-relaxed font-medium">{item.full}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
 
 
       {/* Achievements Section */}
       <section id="achievements" className="py-12 bg-gradient-to-br from-orange-100 via-pink-100 to-purple-100 relative overflow-hidden">
-  {/* Animated Background Icons */}
-  <div className="absolute inset-0 opacity-10 pointer-events-none">
-    <div className="absolute top-1/3 left-1/4 animate-spin-slow">
-      <Trophy className="w-28 h-28 text-orange-500 drop-shadow-md" />
-    </div>
-    <div className="absolute bottom-1/3 right-1/4 animate-spin-slow animation-delay-3000">
-      <Star className="w-24 h-24 text-purple-600 drop-shadow-md" />
-    </div>
-  </div>
-
-  <div className="container mx-auto px-4 relative z-10">
-    {/* Heading */}
-    <div className="text-center mb-12">
-      <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-orange-800 via-pink-700 to-purple-800 bg-clip-text text-transparent mb-2 tracking-tight">
-        Race Achievements
-      </h2>
-      <p className="text-base md:text-lg text-gray-700 max-w-xl mx-auto">
-        Highlights of our most celebrated pigeons and race results.
-      </p>
-    </div>
-
-    {/* Stat Cards */}
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-10">
-      {[
-        { number: "15+", label: "Races Won", icon: Trophy, gradient: "from-yellow-400 to-orange-500" },
-        { number: "50+", label: "Champion Birds", icon: Star, gradient: "from-purple-500 to-pink-500" },
-        { number: "5+", label: "Years Racing", icon: Heart, gradient: "from-pink-500 to-red-500" },
-        { number: "5", label: "Records Held", icon: Trophy, gradient: "from-blue-500 to-purple-500" }
-      ].map((stat, index) => (
-        <div key={index} className="text-center p-4 bg-white/90 rounded-xl shadow-md hover:shadow-xl transition-transform duration-300 hover:scale-105">
-          <div className={`w-14 h-14 bg-gradient-to-br ${stat.gradient} rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg`}>
-            <stat.icon className="w-6 h-6 text-white" />
+        {/* Animated Background Icons */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-1/3 left-1/4 animate-spin-slow">
+            <Trophy className="w-28 h-28 text-orange-500 drop-shadow-md" />
           </div>
-          <h3 className="text-2xl font-bold text-gray-800">{stat.number}</h3>
-          <p className="text-sm text-gray-600">{stat.label}</p>
+          <div className="absolute bottom-1/3 right-1/4 animate-spin-slow animation-delay-3000">
+            <Star className="w-24 h-24 text-purple-600 drop-shadow-md" />
+          </div>
         </div>
-      ))}
-    </div>
 
-    {/* Achievements Grid */}
-    <div className="grid md:grid-cols-2 gap-6 bg-gradient-to-br from-slate-800/80 to-purple-900/80 backdrop-blur-xl rounded-2xl p-6 border border-purple-500/20 shadow-xl">
-      {/* Champion Birds */}
-      <div>
-        <h4 className="text-lg font-semibold text-purple-300 mb-4 flex items-center">
-          <Crown className="w-4 h-4 mr-2" />
-          Champion Birds
-        </h4>
-        <div className="space-y-3">
-          {[
-            { name: "BLUEE", ring: "KKHPF 257", details: "300 KM - 5th/2016, 400 KM 13th, 500 KM 1st", gradient: "from-green-400 to-emerald-500" },
-            { name: "JUNGLEE", ring: "GRPT 792", details: "300 KM - 5th, 400 KM 13th, 500 KM 1st", gradient: "from-lime-400 to-green-500" },
-            { name: "ARMANI", ring: "GRPT 792", details: "200 KM - 1st, 300 KM 8th, 700 KM 5th", gradient: "from-blue-400 to-cyan-500" },
-            { name: "BLACK JACK", ring: "IN 121460", details: "150 KM - 3rd, 200 KM 1st, 300 KM 2nd", gradient: "from-gray-500 to-gray-700" },
-            { name: "BEAUTY", ring: "KKHPF 268", details: "300 KM - 5th, 400 KM 7th, 500 KM 1st", gradient: "from-rose-400 to-pink-500" }
-          ].map((bird, i) => (
-            <div key={i} className={`p-3 rounded-lg bg-gradient-to-r from-slate-700/60 to-purple-800/50 border border-purple-400/20`}>
-              <div className="flex justify-between mb-1">
-                <span className="text-white font-medium text-sm">{bird.name}</span>
-                <span className={`text-xs text-white font-bold px-2 py-0.5 rounded-full bg-gradient-to-r ${bird.gradient}`}>
-                  {bird.ring}
-                </span>
-              </div>
-              <p className="text-gray-300 text-xs">{bird.details}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Heading */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-orange-800 via-pink-700 to-purple-800 bg-clip-text text-transparent mb-2 tracking-tight">
+              Race Achievements
+            </h2>
+            <p className="text-base md:text-lg text-gray-700 max-w-xl mx-auto">
+              Highlights of our most celebrated pigeons and race results.
+            </p>
+          </div>
 
-      {/* Top Achievements */}
-      <div>
-        <h4 className="text-lg font-semibold text-orange-300 mb-4 flex items-center">
-          <Trophy className="w-4 h-4 mr-2" />
-          Top Achievements
-        </h4>
-        <div className="space-y-3">
-          {[
-            { achievement: "1st - 500KM", bird: "JUNGLE & BEAUTY", year: "2016", gradient: "from-yellow-400 to-orange-400" },
-            { achievement: "1st - 200KM", bird: "ARMANI & BLACK JACK", year: "2016", gradient: "from-orange-400 to-red-400" },
-            { achievement: "2nd - 300KM", bird: "BLACK JACK", year: "2016", gradient: "from-gray-400 to-gray-500" },
-            { achievement: "3rd - 150KM", bird: "BLACK JACK", year: "2016", gradient: "from-amber-400 to-orange-500" }
-          ].map((item, i) => (
-            <div key={i} className={`p-3 rounded-lg bg-gradient-to-r from-slate-700/60 to-orange-800/50 border border-orange-400/20`}>
-              <div className="flex justify-between mb-1">
-                <span className="text-white font-medium text-sm">{item.achievement}</span>
-                <span className={`text-xs text-white font-bold px-2 py-0.5 rounded-full bg-gradient-to-r ${item.gradient}`}>
-                  {item.year}
-                </span>
+          {/* Stat Cards */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-10">
+            {[
+              { number: "15+", label: "Races Won", icon: Trophy, gradient: "from-yellow-400 to-orange-500" },
+              { number: "50+", label: "Champion Birds", icon: Star, gradient: "from-purple-500 to-pink-500" },
+              { number: "5+", label: "Years Racing", icon: Heart, gradient: "from-pink-500 to-red-500" },
+              { number: "5", label: "Records Held", icon: Trophy, gradient: "from-blue-500 to-purple-500" }
+            ].map((stat, index) => (
+              <div key={index} className="text-center p-4 bg-white/90 rounded-xl shadow-md hover:shadow-xl transition-transform duration-300 hover:scale-105">
+                <div className={`w-14 h-14 bg-gradient-to-br ${stat.gradient} rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg`}>
+                  <stat.icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800">{stat.number}</h3>
+                <p className="text-sm text-gray-600">{stat.label}</p>
               </div>
-              <p className="text-gray-300 text-xs">Bird: <span className="text-orange-300 font-medium">{item.bird}</span></p>
+            ))}
+          </div>
+
+          {/* Achievements Section */}
+          <div className="w-full mt-10 px-4 flex flex-col items-center">
+            {/* Title */}
+            <h4 className="text-2xl font-bold text-purple-600 mb-6 flex items-center justify-center gap-2">
+              <Trophy className="w-6 h-6 text-purple-600 animate-pulse" />
+              Victories
+            </h4>
+
+            {/* Cards Grid */}
+            <div className="flex flex-wrap justify-center items-start gap-6 w-full">
+
+              {/* === 2016 Card === */}
+              <div className="w-full max-w-sm bg-gradient-to-br from-slate-800/90 to-purple-900/90 backdrop-blur-xl rounded-2xl p-5 border border-purple-500/30 shadow-2xl animate-fade-in">
+                <div className="bg-gradient-to-r from-slate-700/60 to-orange-800/40 border border-orange-400/30 rounded-xl p-4 shadow-md">
+                  <div className="flex items-center justify-center mb-3">
+                    <h5 className="text-orange-300 font-semibold text-sm text-center">2016 Season</h5>
+                  </div>
+
+                  <div className="space-y-2">
+                    {[
+                      { position: "1st", distance: "100KM", birds: "ARMANI", gradient: "from-yellow-400 to-orange-400" },
+                      { position: "1st", distance: "200KM", birds: "BLACK JACK", gradient: "from-yellow-400 to-orange-400" },
+                      { position: "1st", distance: "300KM", birds: "JUNGLEE", gradient: "from-yellow-400 to-orange-400" },
+                      { position: "1st", distance: "500KM", birds: "BEAUTY", gradient: "from-yellow-400 to-orange-400" },
+                      { position: "3rd", distance: "100KM", birds: "BLUEE", gradient: "from-amber-400 to-orange-500" },
+                      // { position: "3rd", distance: "150KM", birds: "BLACK JACK", gradient: "from-amber-400 to-orange-500" },
+                      // { position: "3rd", distance: "300KM", birds: "ARMANI & BEAUTY", gradient: "from-amber-400 to-orange-500" },
+                      // { position: "5th", distance: "100KM", birds: "JUNGLEE", gradient: "from-purple-400 to-purple-500" },
+                      // { position: "5th", distance: "200KM", birds: "BLUEE", gradient: "from-purple-400 to-purple-500" },
+                      // { position: "5th", distance: "700KM", birds: "ARMANI", gradient: "from-purple-400 to-purple-500" }
+                    ]
+                      .sort((a, b) => parseInt(a.distance) - parseInt(b.distance))
+                      .map((result, i) => (
+                        <div key={i} className="flex justify-between items-center py-1">
+                          <div className="flex items-center gap-2">
+                            <span className={`text-xs text-white font-bold px-2 py-0.5 rounded-full bg-gradient-to-r ${result.gradient}`}>
+                              {result.position}
+                            </span>
+                            <span className="text-white text-sm">{result.distance}</span>
+                          </div>
+                          <span className="text-orange-200 text-xs font-medium">{result.birds}</span>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* === 2017 Card === */}
+              <div className="w-full max-w-sm bg-gradient-to-br from-slate-800/90 to-purple-900/90 backdrop-blur-xl rounded-2xl p-5 border border-purple-500/30 shadow-2xl animate-fade-in">
+                <div className="bg-gradient-to-r from-slate-700/60 to-orange-800/40 border border-orange-400/30 rounded-xl p-4 shadow-md">
+                  <div className="flex items-center justify-center mb-3">
+                    <h5 className="text-orange-300 font-semibold text-sm text-center">2017 Season</h5>
+                  </div>
+
+                  <div className="space-y-2">
+                    {[
+                      { position: "1st", distance: "120KM", birds: "NIGHT RIDER", gradient: "from-yellow-400 to-orange-400" },
+                      { position: "2nd", distance: "250KM", birds: "FLASH", gradient: "from-amber-400 to-orange-500" },
+                      { position: "3rd", distance: "350KM", birds: "TWISTER", gradient: "from-purple-400 to-purple-500" },
+                      { position: "1st", distance: "450KM", birds: "NIGHT RIDER", gradient: "from-yellow-400 to-orange-400" },
+                      { position: "4th", distance: "150KM", birds: "BLAZE", gradient: "from-red-400 to-orange-500" }
+                    ]
+                      .sort((a, b) => parseInt(a.distance) - parseInt(b.distance))
+                      .map((result, i) => (
+                        <div key={i} className="flex justify-between items-center py-1">
+                          <div className="flex items-center gap-2">
+                            <span className={`text-xs text-white font-bold px-2 py-0.5 rounded-full bg-gradient-to-r ${result.gradient}`}>
+                              {result.position}
+                            </span>
+                            <span className="text-white text-sm">{result.distance}</span>
+                          </div>
+                          <span className="text-orange-200 text-xs font-medium">{result.birds}</span>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              </div>
             </div>
-          ))}
+          </div>
+
+
+
+
+
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Our Top Breeders Section */}
-      <section id="breeders" className="py-12 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 relative overflow-hidden">
-  <div className="absolute inset-0 z-0">
-    {[...Array(20)].map((_, i) => (
-      <div
-        key={i}
-        className="absolute animate-float"
-        style={{
-          left: `${Math.random() * 100}%`,
-          top: `${Math.random() * 100}%`,
-          animationDelay: `${Math.random() * 5}s`,
-          animationDuration: `${3 + Math.random() * 4}s`
-        }}
-      >
-        <div className="w-1.5 h-1.5 bg-purple-400 rounded-full opacity-40 blur-sm" />
-      </div>
-    ))}
-  </div>
-
-  <div className="container mx-auto px-4 relative z-10">
-    <div className="text-center mb-10 animate-fade-in-up">
-      <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
-        🕊️ Our Top Breeders
-      </h2>
-      <p className="text-sm md:text-base text-purple-200 max-w-2xl mx-auto">
-        Champion birds selected for elite genetics and top-tier racing lineage.
-      </p>
-    </div>
-
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      {[
-        {
-          name: "Thunder Wing",
-          breed: "Belgian Racing Homer",
-          achievement: "1st Place - 500km Race 2024",
-          description: "Exceptional speed and endurance with outstanding homing instincts.",
-          gradient: "from-purple-600 to-blue-600",
-          borderGradient: "from-purple-400 to-blue-400"
-        },
-        {
-          name: "Golden Arrow",
-          breed: "Dutch Racing Pigeon",
-          achievement: "Regional Champion 2023",
-          description: "Consistent performer with remarkable navigation abilities.",
-          gradient: "from-pink-600 to-orange-600",
-          borderGradient: "from-pink-400 to-orange-400"
-        },
-        {
-          name: "Storm Rider",
-          breed: "German Racing Homer",
-          achievement: "Top 3 - National Championship",
-          description: "Powerful flyer with excellent weather adaptation skills.",
-          gradient: "from-blue-600 to-cyan-600",
-          borderGradient: "from-blue-400 to-cyan-400"
-        },
-        {
-          name: "Swift Shadow",
-          breed: "English Racing Pigeon",
-          achievement: "Speed Champion 2024",
-          description: "Lightning-fast sprinter with perfect racing form.",
-          gradient: "from-indigo-600 to-purple-600",
-          borderGradient: "from-indigo-400 to-purple-400"
-        },
-        {
-          name: "Wind Dancer",
-          breed: "Belgian Hybrid",
-          achievement: "Distance Record Holder",
-          description: "Exceptional long-distance racer with incredible stamina.",
-          gradient: "from-orange-600 to-red-600",
-          borderGradient: "from-orange-400 to-red-400"
-        },
-        {
-          name: "Royal Fleet",
-          breed: "Elite Racing Homer",
-          achievement: "Multiple Race Winner",
-          description: "Consistent top performer across various race distances.",
-          gradient: "from-teal-600 to-green-600",
-          borderGradient: "from-teal-400 to-green-400"
-        }
-      ].map((bird, i) => (
-        <div
-          key={i}
-          className={`bg-white/10 backdrop-blur-xl rounded-xl p-4 md:p-5 border-2 border-gradient-to-r ${bird.borderGradient} hover:scale-[1.035] transition-all duration-300 animate-fade-in-up`}
-          style={{ animationDelay: `${i * 100}ms` }}
-        >
-          {/* Image Section */}
-          <div className={`w-full h-36 bg-gradient-to-br ${bird.gradient} rounded-lg mb-4 relative overflow-hidden shadow-md`}>
-            <div className="absolute inset-0 bg-white/10" />
-            <Feather className="w-10 h-10 text-white absolute inset-0 m-auto animate-float-slow" />
-            <div className="absolute top-2 right-2">
-              <div className="w-2 h-2 bg-white/70 rounded-full animate-pulse" />
+      <section className="py-8 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          {[...Array(15)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute animate-pulse"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${2 + Math.random() * 2}s`
+              }}
+            >
+              <div className="w-1 h-1 bg-purple-400 rounded-full opacity-60 blur-sm" />
             </div>
-          </div>
-
-          {/* Text */}
-          <h3 className="text-lg font-semibold text-white mb-1">{bird.name}</h3>
-          <p className="text-purple-300 text-sm mb-1">{bird.breed}</p>
-          <div className="flex items-center text-xs text-purple-200 mb-2">
-            <Trophy className="w-4 h-4 text-yellow-300 mr-2" />
-            {bird.achievement}
-          </div>
-          <p className="text-purple-100 text-xs leading-snug">{bird.description}</p>
+          ))}
         </div>
-      ))}
-    </div>
-  </div>
-</section>
 
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-8 animate-fade-in-up">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 bg-gradient-to-r from-purple-200 via-pink-200 to-purple-200 bg-clip-text text-transparent">
+              🕊️ Our Top Breeders
+            </h2>
+            <p className="text-base md:text-lg text-purple-200 max-w-2xl mx-auto font-medium">
+              Discover our premium bloodlines with proven racing excellence and championship genetics
+            </p>
+            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-4 rounded-full" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                name: "Thunder Wing",
+                breed: "Belgian Racing",
+                achievement: "1st Place 500km",
+                gradient: "from-purple-500 to-blue-500",
+                borderGradient: "from-purple-400 to-blue-400",
+                icon: "⚡"
+              },
+              {
+                name: "Golden Arrow",
+                breed: "Dutch Racing",
+                achievement: "Regional Champ",
+                gradient: "from-pink-500 to-orange-500",
+                borderGradient: "from-pink-400 to-orange-400",
+                icon: "🏆"
+              },
+              {
+                name: "Storm Rider",
+                breed: "German Racing",
+                achievement: "Top 3 National",
+                gradient: "from-blue-500 to-cyan-500",
+                borderGradient: "from-blue-400 to-cyan-400",
+                icon: "🌪️"
+              },
+              {
+                name: "Swift Shadow",
+                breed: "English Racing",
+                achievement: "Speed Champion",
+                gradient: "from-indigo-500 to-purple-500",
+                borderGradient: "from-indigo-400 to-purple-400",
+                icon: "💨"
+              },
+              {
+                name: "Wind Dancer",
+                breed: "Belgian Hybrid",
+                achievement: "Distance Record",
+                gradient: "from-orange-500 to-red-500",
+                borderGradient: "from-orange-400 to-red-400",
+                icon: "🎯"
+              },
+              {
+                name: "Royal Fleet",
+                breed: "Elite Racing",
+                achievement: "Multi Winner",
+                gradient: "from-teal-500 to-green-500",
+                borderGradient: "from-teal-400 to-green-400",
+                icon: "👑"
+              }
+            ].map((bird, i) => (
+              <div
+                key={i}
+                className={`bg-white/10 backdrop-blur-xl rounded-xl p-6 border-2 border-white/20 hover:scale-105 hover:bg-white/15 hover:border-white/30 transition-all duration-500 animate-fade-in-up cursor-pointer group shadow-2xl hover:shadow-purple-500/25 relative overflow-hidden`}
+                style={{ animationDelay: `${i * 100}ms` }}
+              >
+                {/* Animated background gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${bird.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+
+                {/* Floating particles effect */}
+                <div className="absolute top-2 right-2 w-2 h-2 bg-white/60 rounded-full animate-pulse group-hover:animate-bounce" />
+                <div className="absolute bottom-2 left-2 w-1 h-1 bg-purple-400/60 rounded-full animate-ping" />
+
+                {/* Enhanced Image Section */}
+                <div className={`w-full h-28 bg-gradient-to-br ${bird.gradient} rounded-xl mb-4 relative overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-500`}>
+                  <div className="absolute inset-0 bg-white/10 group-hover:bg-white/20 transition-colors duration-500" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-4xl group-hover:scale-110 transition-transform duration-500 filter drop-shadow-lg">
+                      {bird.icon}
+                    </span>
+                  </div>
+                  <div className="absolute top-2 right-2">
+                    <div className="w-2 h-2 bg-white/80 rounded-full animate-pulse group-hover:bg-yellow-300" />
+                  </div>
+                  {/* Shimmer effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                </div>
+
+                {/* Enhanced Text Content */}
+                <div className="relative  z-10">
+                  <h3 className="text-lg font-bold text-white text-center mb-2 group-hover:text-purple-100 transition-colors duration-300">
+                    {bird.name}
+                  </h3>
+                  <p className="text-purple-300 text-center text-sm mb-2 group-hover:text-purple-200 transition-colors duration-300">
+                    {bird.breed}
+                  </p>
+                  <div className="flex  items-center justify-center text-sm text-purple-200 mb-3 group-hover:text-purple-100 transition-colors duration-300">
+                    <Trophy className="w-4 h-4 text-yellow-300  mr-2 flex-shrink-0 group-hover:text-yellow-200 group-hover:scale-110 transition-all duration-300" />
+                    <span>{bird.achievement}</span>
+                  </div>
+
+                  {/* Progress bar indicator */}
+                  <div className="w-full bg-white/20 rounded-full h-1 mb-2 overflow-hidden">
+                    <div
+                      className={`h-full bg-gradient-to-r ${bird.gradient} rounded-full transition-all duration-1000 group-hover:w-full`}
+                      style={{ width: '60%' }}
+                    />
+                  </div>
+
+ 
+                  {/* Rating stars */}
+                  <div className="flex items-center justify-center  space-x-1">
+                    {[...Array(5)].map((_, starIndex) => (
+                      <div
+                        key={starIndex}
+                        className={`w-3 h-3  ${starIndex < 4 ? 'text-yellow-300' : 'text-gray-500'} transition-colors duration-300 text-center `}
+                      >
+                        ⭐
+                      </div>
+                    ))}
+                    {/* <span className="text-xs text-purple-300 ml-2 group-hover:text-purple-200 transition-colors duration-300">
+                    Elite
+                  </span> */}
+                  </div>
+                </div>
+
+                {/* Hover glow effect */}
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-500/0 via-pink-500/0 to-purple-500/0 group-hover:from-purple-500/10 group-hover:via-pink-500/10 group-hover:to-purple-500/10 transition-all duration-500 pointer-events-none" />
+              </div>
+            ))}
+          </div>
+
+          {/* Enhanced Call-to-action */}
+          <div className="text-center mt-8">
+            <button className="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white px-8 py-3 rounded-full text-base font-bold hover:from-purple-700 hover:via-pink-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-purple-500/50 relative overflow-hidden group">
+              <span className="relative z-10">View All Elite Breeders</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            </button>
+          </div>
+        </div>
+
+        <style jsx>{`
+        @keyframes fade-in-up {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-fade-in-up {
+          animation: fade-in-up 0.6s ease-out forwards;
+        }
+      `}</style>
+      </section>
 
 
       {/* Clubs Section */}
       <section id="clubs" className="py-12 px-4 sm:px-6 lg:px-8 relative">
-  <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 to-slate-900/30" />
-  
-  <div className="relative z-10 max-w-6xl mx-auto">
-    <div className="text-center mb-10 animate-fade-in-up">
-      <div className="flex items-center justify-center mb-4">
-        <Shield className="w-6 h-6 text-purple-400 mr-2" />
-        <h2 className="text-3xl md:text-4xl font-bold text-white font-serif tracking-tight">
-          CLUBS TAKING PART IN
-        </h2>
-      </div>
-      <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full" />
-    </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 to-slate-900/30" />
 
-    <div className="grid md:grid-cols-2 gap-6">
-      {/* GRPT */}
-      <div className="bg-gradient-to-br from-slate-800/80 to-purple-900/80 backdrop-blur-md rounded-2xl p-5 shadow-xl border border-purple-500/20 animate-fade-in-up hover:scale-[1.025] transition-transform duration-300">
-        <div className="text-center">
-          <div className="w-24 h-24 bg-gradient-to-br from-green-600 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 animate-pulse-glow">
-            <Shield className="w-12 h-12 text-white" />
+        <div className="relative z-10 max-w-6xl mx-auto">
+          <div className="text-center mb-10 animate-fade-in-up">
+            <div className="flex items-center justify-center mb-4">
+              <Shield className="w-6 h-6 text-purple-400 mr-2" />
+              <h2 className="text-3xl md:text-4xl font-bold text-white font-serif tracking-tight">
+                CLUBS TAKING PART IN
+              </h2>
+            </div>
+            <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full" />
           </div>
-          <h3 className="text-xl md:text-2xl font-bold text-white mb-2 font-serif leading-snug">
-            GANGAVATHI RACING PIGEON TRUST
-          </h3>
-          <p className="text-green-300 text-sm font-semibold mb-2">(GRPT)</p>
-          <div className="flex items-center justify-center mb-4 text-purple-300 text-sm">
-            <Calendar className="w-4 h-4 text-purple-400 mr-1.5" />
-            SINCE 2019
-          </div>
-          <div className="flex justify-center">
-            <div className="flex items-center bg-green-600/20 px-3 py-1.5 rounded-full">
-              <MapPin className="w-4 h-4 text-green-400 mr-1.5" />
-              <span className="text-green-300 text-xs font-medium">Gangavathi, Karnataka</span>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* GRPT */}
+            <div className="bg-gradient-to-br from-slate-800/80 to-purple-900/80 backdrop-blur-md rounded-2xl p-5 shadow-xl border border-purple-500/20 animate-fade-in-up hover:scale-[1.025] transition-transform duration-300">
+              <div className="text-center">
+                <div className="w-24 h-24 bg-gradient-to-br from-green-600 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 animate-pulse-glow">
+                  <Shield className="w-12 h-12 text-white" />
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2 font-serif leading-snug">
+                  GANGAVATHI RACING PIGEON TRUST
+                </h3>
+                <p className="text-green-300 text-sm font-semibold mb-2">(GRPT)</p>
+                <div className="flex items-center justify-center mb-4 text-purple-300 text-sm">
+                  <Calendar className="w-4 h-4 text-purple-400 mr-1.5" />
+                  SINCE 2019
+                </div>
+                <div className="flex justify-center">
+                  <div className="flex items-center bg-green-600/20 px-3 py-1.5 rounded-full">
+                    <MapPin className="w-4 h-4 text-green-400 mr-1.5" />
+                    <span className="text-green-300 text-xs font-medium">Gangavathi, Karnataka</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* IDI */}
+            <div className="bg-gradient-to-br from-slate-800/80 to-purple-900/80 backdrop-blur-md rounded-2xl p-5 shadow-xl border border-purple-500/20 animate-fade-in-up animation-delay-300 hover:scale-[1.025] transition-transform duration-300">
+              <div className="text-center">
+                <div className="w-24 h-24 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-4 animate-pulse-glow">
+                  <Trophy className="w-12 h-12 text-white" />
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2 font-serif leading-snug">
+                  INTERNATIONAL DERBY INDIA
+                </h3>
+                <p className="text-purple-300 text-sm font-semibold mb-2">ONE LOFT INDIA</p>
+                <div className="flex items-center justify-center mb-4 text-pink-300 text-sm">
+                  <Calendar className="w-4 h-4 text-pink-400 mr-1.5" />
+                  SINCE 2020
+                </div>
+                <div className="flex justify-center">
+                  <div className="flex items-center bg-purple-600/20 px-3 py-1.5 rounded-full">
+                    <Star className="w-4 h-4 text-purple-400 mr-1.5" />
+                    <span className="text-purple-300 text-xs font-medium">International Competition</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* IDI */}
-      <div className="bg-gradient-to-br from-slate-800/80 to-purple-900/80 backdrop-blur-md rounded-2xl p-5 shadow-xl border border-purple-500/20 animate-fade-in-up animation-delay-300 hover:scale-[1.025] transition-transform duration-300">
-        <div className="text-center">
-          <div className="w-24 h-24 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-4 animate-pulse-glow">
-            <Trophy className="w-12 h-12 text-white" />
-          </div>
-          <h3 className="text-xl md:text-2xl font-bold text-white mb-2 font-serif leading-snug">
-            INTERNATIONAL DERBY INDIA
-          </h3>
-          <p className="text-purple-300 text-sm font-semibold mb-2">ONE LOFT INDIA</p>
-          <div className="flex items-center justify-center mb-4 text-pink-300 text-sm">
-            <Calendar className="w-4 h-4 text-pink-400 mr-1.5" />
-            SINCE 2020
-          </div>
-          <div className="flex justify-center">
-            <div className="flex items-center bg-purple-600/20 px-3 py-1.5 rounded-full">
-              <Star className="w-4 h-4 text-purple-400 mr-1.5" />
-              <span className="text-purple-300 text-xs font-medium">International Competition</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
 
 
       {/* Wall of Fame */}
       <section id="fame" className="py-10 bg-gradient-to-br from-yellow-100 via-orange-100 to-red-100 relative overflow-hidden">
-  {/* Background Icons */}
-  <div className="absolute inset-0 opacity-10 pointer-events-none">
-    <div className="absolute top-8 left-8 animate-spin-slow">
-      <Star className="w-28 h-28 text-yellow-600" />
-    </div>
-    <div className="absolute bottom-8 right-8 animate-spin-slow animation-delay-2000">
-      <Trophy className="w-24 h-24 text-orange-600" />
-    </div>
-  </div>
-
-  <div className="container mx-auto px-4 relative z-10">
-    <div className="max-w-6xl mx-auto">
-      {/* Heading */}
-      <div className="text-center mb-10 animate-fade-in-up">
-        <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-yellow-800 via-orange-700 to-red-800 bg-clip-text text-transparent mb-3 tracking-tight">
-          Wall of Fame
-        </h2>
-        <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
-          Honoring our legendary champion birds and their remarkable achievements.
-        </p>
-      </div>
-
-      {/* Cards */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-        {[
-          {
-            name: "Legend Master",
-            years: "2018–2022",
-            achievements: ["National Champion 2020", "Speed Record Holder", "Hall of Fame Inductee"],
-            legacy: "Retired champion with 45 race victories",
-            gradient: "from-yellow-500 to-orange-500"
-          },
-          {
-            name: "Golden Hero",
-            years: "2019–2023",
-            achievements: ["Regional Champion 2021", "Distance King", "Breeding Stallion"],
-            legacy: "Exceptional long-distance performer",
-            gradient: "from-orange-500 to-red-500"
-          },
-          {
-            name: "Storm King",
-            years: "2017–2021",
-            achievements: ["Weather Champion", "Consistent Winner", "Legendary Bloodline"],
-            legacy: "Undefeated in adverse conditions",
-            gradient: "from-red-500 to-pink-500"
-          }
-        ].map((legend, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-xl p-5 shadow-lg border-2 border-yellow-300 hover:shadow-xl hover:scale-[1.03] transition-all duration-300 transform animate-card-entrance"
-            style={{ animationDelay: `${index * 200}ms` }}
-          >
-            <div className={`w-full h-40 bg-gradient-to-br ${legend.gradient} rounded-lg mb-4 flex items-center justify-center relative overflow-hidden shadow-md`}>
-              <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent"></div>
-              <Star className="w-14 h-14 text-white animate-spin-slow" />
-              <div className="absolute top-2 right-2 bg-white/30 backdrop-blur-sm rounded-full p-1">
-                <Trophy className="w-4 h-4 text-white animate-bounce-slow" />
-              </div>
-              <div className="absolute bottom-2 left-2 bg-white/20 backdrop-blur-sm rounded-full px-2 py-0.5">
-                <span className="text-white text-xs font-semibold">LEGEND</span>
-              </div>
-            </div>
-            <h3 className="text-lg font-bold text-gray-800 mb-1">{legend.name}</h3>
-            <p className="text-orange-600 text-sm font-medium mb-2">{legend.years}</p>
-            <ul className="mb-3 space-y-1">
-              {legend.achievements.map((achieve, idx) => (
-                <li key={idx} className="flex items-center text-sm">
-                  <Trophy className="w-4 h-4 text-yellow-500 mr-2 animate-bounce-slow" />
-                  <span className="text-gray-700">{achieve}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-gray-600 italic text-xs leading-snug bg-gradient-to-r from-yellow-50 to-orange-50 p-2 rounded-md">
-              {legend.legacy}
-            </p>
+        {/* Background Icons */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-8 left-8 animate-spin-slow">
+            <Star className="w-28 h-28 text-yellow-600" />
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+          <div className="absolute bottom-8 right-8 animate-spin-slow animation-delay-2000">
+            <Trophy className="w-24 h-24 text-orange-600" />
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            {/* Heading */}
+            <div className="text-center mb-10 animate-fade-in-up">
+              <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-yellow-800 via-orange-700 to-red-800 bg-clip-text text-transparent mb-3 tracking-tight">
+                Wall of Fame
+              </h2>
+              <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
+                Honoring our legendary champion birds and their remarkable achievements.
+              </p>
+            </div>
+
+            {/* Cards */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+              {[
+                {
+                  name: "Legend Master",
+                  years: "2018–2022",
+                  achievements: ["National Champion 2020", "Speed Record Holder", "Hall of Fame Inductee"],
+                  legacy: "Retired champion with 45 race victories",
+                  gradient: "from-yellow-500 to-orange-500"
+                },
+                {
+                  name: "Golden Hero",
+                  years: "2019–2023",
+                  achievements: ["Regional Champion 2021", "Distance King", "Breeding Stallion"],
+                  legacy: "Exceptional long-distance performer",
+                  gradient: "from-orange-500 to-red-500"
+                },
+                {
+                  name: "Storm King",
+                  years: "2017–2021",
+                  achievements: ["Weather Champion", "Consistent Winner", "Legendary Bloodline"],
+                  legacy: "Undefeated in adverse conditions",
+                  gradient: "from-red-500 to-pink-500"
+                }
+              ].map((legend, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-xl p-5 shadow-lg border-2 border-yellow-300 hover:shadow-xl hover:scale-[1.03] transition-all duration-300 transform animate-card-entrance"
+                  style={{ animationDelay: `${index * 200}ms` }}
+                >
+                  <div className={`w-full h-40 bg-gradient-to-br ${legend.gradient} rounded-lg mb-4 flex items-center justify-center relative overflow-hidden shadow-md`}>
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent"></div>
+                    <Star className="w-14 h-14 text-white animate-spin-slow" />
+                    <div className="absolute top-2 right-2 bg-white/30 backdrop-blur-sm rounded-full p-1">
+                      <Trophy className="w-4 h-4 text-white animate-bounce-slow" />
+                    </div>
+                    <div className="absolute bottom-2 left-2 bg-white/20 backdrop-blur-sm rounded-full px-2 py-0.5">
+                      <span className="text-white text-xs font-semibold">LEGEND</span>
+                    </div>
+                  </div>
+                  <h3 className="text-lg text-center font-bold text-gray-800 mb-1">{legend.name}</h3>
+                  <p className="text-orange-600 text-center text-sm font-medium mb-2">{legend.years}</p>
+                  <ul className="mb-3 space-y-1">
+                    {legend.achievements.map((achieve, idx) => (
+                      <li key={idx} className="flex items-center text-sm">
+                        <Trophy className="w-4 h-4 text-yellow-500 mr-2 animate-bounce-slow" />
+                        <span className="text-gray-700">{achieve}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-gray-600 italic text-xs leading-snug bg-gradient-to-r from-yellow-50 to-orange-50 p-2 rounded-md">
+                    {legend.legacy}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
 
 
 
       {/* Gallery Section */}
       <section id="gallery" className="py-12 bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 relative overflow-hidden">
-  {/* Twinkling Background Stars */}
-  <div className="absolute inset-0 pointer-events-none">
-    {[...Array(15)].map((_, i) => (
-      <div
-        key={i}
-        className="absolute animate-twinkle"
-        style={{
-          left: `${Math.random() * 100}%`,
-          top: `${Math.random() * 100}%`,
-          animationDelay: `${Math.random() * 3}s`
-        }}
-      >
-        <div className="w-1 h-1 bg-white rounded-full"></div>
-      </div>
-    ))}
-  </div>
-
-  <div className="container mx-auto px-4 relative z-10">
-    <div className="max-w-7xl mx-auto">
-      {/* Section Heading */}
-      <div className="text-center mb-12 animate-fade-in-up">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
-          360 Loft Gallery
-        </h2>
-        <p className="text-base md:text-lg text-purple-200 max-w-3xl mx-auto leading-relaxed">
-          Capturing moments of excellence, training sessions, and our beautiful racing pigeons in action.
-        </p>
-      </div>
-
-      {/* Gallery Grid */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {[
-          {
-            title: "Training Session",
-            description: "Morning training with our champion racers",
-            image: "https://img.freepik.com/premium-photo/full-body-speed-racing-pigeon-bird-home-loft_34013-327.jpg",
-            gradient: "from-purple-600 to-blue-600"
-          },
-          {
-            title: "Racing Champions",
-            description: "Our top performing birds ready for competition",
-            image: "https://t3.ftcdn.net/jpg/02/92/29/50/360_F_292295043_y9UcUE9puMMKiDQ3FcVCDB2IXYVAJUJ8.jpg",
-            gradient: "from-blue-600 to-cyan-600"
-          },
-          {
-            title: "Loft Facilities",
-            description: "State-of-the-art breeding and training facilities",
-            image: "https://img.freepik.com/premium-photo/full-body-speed-racing-pigeon-bird-home-loft_34013-327.jpg",
-            gradient: "from-cyan-600 to-teal-600"
-          },
-          {
-            title: "Victory Celebration",
-            description: "Celebrating another championship win",
-            image: "https://bloximages.chicago2.vip.townnews.com/tucson.com/content/tncms/assets/v3/editorial/b/0e/b0ee422e-442b-566d-a72b-480adc8c7835/571fb050f2284.image.jpg?resize=750%2C500",
-            gradient: "from-teal-600 to-green-600"
-          },
-          {
-            title: "Young Birds",
-            description: "Next generation of racing champions",
-            image: "https://assets1.cbsnewsstatic.com/hub/i/2024/10/20/7128a02a-fb59-4d1d-beeb-491aa4902830/pigeons-1920.jpg",
-            gradient: "from-green-600 to-yellow-600"
-          },
-          {
-            title: "Team Members",
-            description: "Our dedicated team of pigeon racing experts",
-            image: "https://assets1.cbsnewsstatic.com/hub/i/2024/10/20/7128a02a-fb59-4d1d-beeb-491aa4902830/pigeons-1920.jpg",
-            gradient: "from-yellow-600 to-orange-600"
-          }
-        ].map((item, index) => (
-          <div
-            key={index}
-            className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-400 transform hover:scale-[1.03] hover:-translate-y-2 animate-card-entrance"
-            style={{ animationDelay: `${index * 150}ms` }}
-          >
-            <div className="aspect-w-16 aspect-h-10 relative">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className={`absolute inset-0 bg-gradient-to-t ${item.gradient} opacity-60 group-hover:opacity-40 transition-opacity duration-300`}></div>
+        {/* Twinkling Background Stars */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(15)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute animate-twinkle"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`
+              }}
+            >
+              <div className="w-1 h-1 bg-white rounded-full"></div>
             </div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white bg-black/30 backdrop-blur-sm">
-              <div className="flex items-center mb-1">
-                <Camera className="w-4 h-4 mr-2 text-white/90" />
-                <h3 className="text-lg font-semibold tracking-tight drop-shadow">{item.title}</h3>
-              </div>
-              <p className="text-xs opacity-90 leading-tight">{item.description}</p>
+          ))}
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            {/* Section Heading */}
+            <div className="text-center mb-12 animate-fade-in-up">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
+                360 Loft Gallery
+              </h2>
+              <p className="text-base md:text-lg text-purple-200 max-w-3xl mx-auto leading-relaxed">
+                Capturing moments of excellence, training sessions, and our beautiful racing pigeons in action.
+              </p>
+            </div>
+
+            {/* Gallery Grid */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {[
+                {
+                  title: "Training Session",
+                  description: "Morning training with our champion racers",
+                  image: "https://img.freepik.com/premium-photo/full-body-speed-racing-pigeon-bird-home-loft_34013-327.jpg",
+                  gradient: "from-purple-600 to-blue-600"
+                },
+                {
+                  title: "Racing Champions",
+                  description: "Our top performing birds ready for competition",
+                  image: "https://t3.ftcdn.net/jpg/02/92/29/50/360_F_292295043_y9UcUE9puMMKiDQ3FcVCDB2IXYVAJUJ8.jpg",
+                  gradient: "from-blue-600 to-cyan-600"
+                },
+                {
+                  title: "Loft Facilities",
+                  description: "State-of-the-art breeding and training facilities",
+                  image: "https://img.freepik.com/premium-photo/full-body-speed-racing-pigeon-bird-home-loft_34013-327.jpg",
+                  gradient: "from-cyan-600 to-teal-600"
+                },
+                // {
+                //   title: "Victory Celebration",
+                //   description: "Celebrating another championship win",
+                //   image: "https://bloximages.chicago2.vip.townnews.com/tucson.com/content/tncms/assets/v3/editorial/b/0e/b0ee422e-442b-566d-a72b-480adc8c7835/571fb050f2284.image.jpg?resize=750%2C500",
+                //   gradient: "from-teal-600 to-green-600"
+                // },
+                // {
+                //   title: "Young Birds",
+                //   description: "Next generation of racing champions",
+                //   image: "https://assets1.cbsnewsstatic.com/hub/i/2024/10/20/7128a02a-fb59-4d1d-beeb-491aa4902830/pigeons-1920.jpg",
+                //   gradient: "from-green-600 to-yellow-600"
+                // },
+                // {
+                //   title: "Team Members",
+                //   description: "Our dedicated team of pigeon racing experts",
+                //   image: "https://assets1.cbsnewsstatic.com/hub/i/2024/10/20/7128a02a-fb59-4d1d-beeb-491aa4902830/pigeons-1920.jpg",
+                //   gradient: "from-yellow-600 to-orange-600"
+                // }
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-400 transform hover:scale-[1.03] hover:-translate-y-2 animate-card-entrance"
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
+                  <div className="aspect-w-16 aspect-h-10 relative">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${item.gradient} opacity-60 group-hover:opacity-40 transition-opacity duration-300`}></div>
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white bg-black/30 backdrop-blur-sm">
+                    <div className="flex items-center mb-1">
+                      <Camera className="w-4 h-4 mr-2 text-white/90" />
+                      <h3 className="text-lg font-semibold tracking-tight drop-shadow">{item.title}</h3>
+                    </div>
+                    <p className="text-xs opacity-90 leading-tight">{item.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
 
       {/* Birds for Sale Section */}
       <section id="auction" className="scroll-mt-40 py-20 bg-gradient-to-br from-green-900 via-teal-900 to-blue-900 relative overflow-hidden">
-  <div className="absolute inset-0">
-    {[...Array(20)].map((_, i) => (
-      <div
-        key={i}
-        className="absolute animate-float"
-        style={{
-          left: `${Math.random() * 100}%`,
-          top: `${Math.random() * 100}%`,
-          animationDelay: `${Math.random() * 5}s`,
-          animationDuration: `${3 + Math.random() * 4}s`
-        }}
-      >
-        <div className="w-1 h-1 bg-green-400 rounded-full opacity-60"></div>
-      </div>
-    ))}
-  </div>
-
-  <div className="container mx-auto px-4 relative z-10">
-    <div className="max-w-7xl mx-auto">
-      {/* Header */}
-      <div className="text-center mb-16 animate-fade-in-up">
-        <div className="flex items-center justify-center mb-6">
-          <Gavel className="w-10 h-10 text-yellow-400 mr-3 animate-bounce-slow" />
-          <h2 className="text-4xl md:text-5xl font-bold text-white">Auction</h2>
-        </div>
-        <p className="text-lg md:text-xl text-green-200 max-w-3xl mx-auto leading-relaxed">
-          Premium racing pigeons available through our exclusive auction system.
-        </p>
-      </div>
-
-      {/* Members Selling Birds */}
-      <div className="mb-14">
-        <h4 className="text-2xl font-semibold text-center text-white mb-10">Fancier</h4>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
-            { name: "Rajesh Kumar", specialty: "Speed Champions", birds: 5 },
-            { name: "Suresh Patil", specialty: "Distance Racers", birds: 8 },
-            { name: "Mahesh Singh", specialty: "Breeding Stock", birds: 6 },
-            { name: "Vikram Reddy", specialty: "Young Birds", birds: 12 }
-          ].map((member, index) => (
+        <div className="absolute inset-0">
+          {[...Array(20)].map((_, i) => (
             <div
-              key={index}
-              className="bg-white/10 backdrop-blur-lg rounded-xl p-5 text-center hover:shadow-xl transition-all duration-300 transform hover:scale-[1.03] animate-card-entrance border border-white/20"
-              style={{ animationDelay: `${index * 100}ms` }}
+              key={i}
+              className="absolute animate-float"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${3 + Math.random() * 4}s`
+              }}
             >
-              <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                <User className="w-7 h-7 text-white" />
-              </div>
-              <h5 className="text-lg font-bold text-white mb-1">{member.name}</h5>
-              <p className="text-green-300 text-sm mb-1">{member.specialty}</p>
-              <span className="inline-block bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-xs">
-                {member.birds} Birds Available
-              </span>
+              <div className="w-1 h-1 bg-green-400 rounded-full opacity-60"></div>
             </div>
           ))}
         </div>
-      </div>
 
-      {/* Birds for Sale */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[
-          {
-            name: "Young Champion",
-            breed: "Belgian Racing Homer",
-            age: "6 months",
-            price: "₹15,000",
-            seller: "Rajesh Kumar",
-            features: ["Proven bloodline", "Health certified", "Training started"],
-            gradient: "from-green-600 to-teal-600",
-            priceGradient: "from-green-500 to-emerald-500"
-          },
-          {
-            name: "Speed Demon",
-            breed: "Dutch Racing Pigeon",
-            age: "8 months",
-            price: "₹18,000",
-            seller: "Suresh Patil",
-            features: ["Fast learner", "Excellent form", "Race ready"],
-            gradient: "from-teal-600 to-blue-600",
-            priceGradient: "from-teal-500 to-blue-500"
-          },
-          {
-            name: "Elite Performer",
-            breed: "German Racing Homer",
-            age: "1 year",
-            price: "₹25,000",
-            seller: "Mahesh Singh",
-            features: ["Competition proven", "Strong genetics", "Top performer"],
-            gradient: "from-blue-600 to-indigo-600",
-            priceGradient: "from-blue-500 to-indigo-500"
-          }
-        ].map((bird, index) => (
-          <div
-            key={index}
-            className="bg-white/10 backdrop-blur-lg rounded-2xl p-5 hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.03] hover:-translate-y-2 animate-card-entrance border border-white/20"
-            style={{ animationDelay: `${index * 200}ms` }}
-          >
-            <div className={`w-full h-44 bg-gradient-to-br ${bird.gradient} rounded-xl mb-4 flex items-center justify-center relative overflow-hidden shadow-md`}>
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
-              <Feather className="w-10 h-10 text-white animate-bounce-slow transform -rotate-12" />
-              <div className="absolute top-2 left-2 w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse" />
-              <div className="absolute bottom-2 right-2 bg-white/20 backdrop-blur-sm rounded-full px-2 py-0.5">
-                <span className="text-white text-[10px] font-semibold">AUCTION</span>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-16 animate-fade-in-up">
+              <div className="flex items-center justify-center mb-6">
+                <Gavel className="w-10 h-10 text-yellow-400 mr-3 animate-bounce-slow" />
+                <h2 className="text-4xl md:text-5xl font-bold text-white">Auction</h2>
+              </div>
+              <p className="text-lg md:text-xl text-green-200 max-w-3xl mx-auto leading-relaxed">
+                Premium racing pigeons available through our exclusive auction system.
+              </p>
+            </div>
+
+            {/* Members Selling Birds */}
+            <div className="mb-14">
+              <h4 className="text-2xl font-semibold text-center text-white mb-10">Fancier</h4>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: "Rajesh Kumar", specialty: "Speed Champions", birds: 5 },
+                  { name: "Suresh Patil", specialty: "Distance Racers", birds: 8 },
+                  { name: "Mahesh Singh", specialty: "Breeding Stock", birds: 6 },
+                  { name: "Vikram Reddy", specialty: "Young Birds", birds: 12 }
+                ].map((member, index) => (
+                  <div
+                    key={index}
+                    className="bg-white/10 backdrop-blur-lg rounded-xl p-5 text-center hover:shadow-xl transition-all duration-300 transform hover:scale-[1.03] animate-card-entrance border border-white/20"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <User className="w-7 h-7 text-white" />
+                    </div>
+                    <h5 className="text-lg font-bold text-white mb-1">{member.name}</h5>
+                    <p className="text-green-300 text-sm mb-1">{member.specialty}</p>
+                    <span className="inline-block bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-xs">
+                      {member.birds} Birds Available
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
-            <h3 className="text-lg font-bold text-white mb-1">{bird.name}</h3>
-            <p className="text-green-300 text-sm font-medium">{bird.breed}</p>
-            <p className="text-teal-200 text-sm">Age: {bird.age}</p>
-            <p className="text-blue-200 text-xs mb-3">Seller: {bird.seller}</p>
-            <div className="mb-4">
-              {bird.features.map((feature, idx) => (
-                <span
-                  key={idx}
-                  className="inline-block bg-white/20 text-white text-[10px] px-2 py-0.5 rounded-full mr-1 mb-1 backdrop-blur-sm"
+
+            {/* Birds for Sale */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  name: "Young Champion",
+                  breed: "Belgian Racing Homer",
+                  age: "6 months",
+                  price: "₹15,000",
+                  seller: "Rajesh Kumar",
+                  features: ["Proven bloodline", "Health certified", "Training started"],
+                  gradient: "from-green-600 to-teal-600",
+                  priceGradient: "from-green-500 to-emerald-500"
+                },
+                {
+                  name: "Speed Demon",
+                  breed: "Dutch Racing Pigeon",
+                  age: "8 months",
+                  price: "₹18,000",
+                  seller: "Suresh Patil",
+                  features: ["Fast learner", "Excellent form", "Race ready"],
+                  gradient: "from-teal-600 to-blue-600",
+                  priceGradient: "from-teal-500 to-blue-500"
+                },
+                {
+                  name: "Elite Performer",
+                  breed: "German Racing Homer",
+                  age: "1 year",
+                  price: "₹25,000",
+                  seller: "Mahesh Singh",
+                  features: ["Competition proven", "Strong genetics", "Top performer"],
+                  gradient: "from-blue-600 to-indigo-600",
+                  priceGradient: "from-blue-500 to-indigo-500"
+                }
+              ].map((bird, index) => (
+                <div
+                  key={index}
+                  className="bg-white/10 backdrop-blur-lg rounded-2xl p-5 hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.03] hover:-translate-y-2 animate-card-entrance border border-white/20"
+                  style={{ animationDelay: `${index * 200}ms` }}
                 >
-                  {feature}
-                </span>
+                  <div className={`w-full h-44 bg-gradient-to-br ${bird.gradient} rounded-xl mb-4 flex items-center justify-center relative overflow-hidden shadow-md`}>
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                    <Feather className="w-10 h-10 text-white animate-bounce-slow transform -rotate-12" />
+                    <div className="absolute top-2 left-2 w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse" />
+                    <div className="absolute bottom-2 right-2 bg-white/20 backdrop-blur-sm rounded-full px-2 py-0.5">
+                      <span className="text-white text-[10px] font-semibold">AUCTION</span>
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-1">{bird.name}</h3>
+                  <p className="text-green-300 text-sm font-medium">{bird.breed}</p>
+                  <p className="text-teal-200 text-sm">Age: {bird.age}</p>
+                  <p className="text-blue-200 text-xs mb-3">Seller: {bird.seller}</p>
+                  <div className="mb-4">
+                    {bird.features.map((feature, idx) => (
+                      <span
+                        key={idx}
+                        className="inline-block bg-white/20 text-white text-[10px] px-2 py-0.5 rounded-full mr-1 mb-1 backdrop-blur-sm"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className={`text-xl font-bold bg-gradient-to-r ${bird.priceGradient} bg-clip-text text-transparent animate-pulse-glow`}>
+                      {bird.price}
+                    </span>
+                    <button className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-400 hover:to-teal-400 text-white px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-sm font-medium">
+                      Bid Now
+                    </button>
+                  </div>
+                </div>
               ))}
             </div>
-            <div className="flex items-center justify-between">
-              <span className={`text-xl font-bold bg-gradient-to-r ${bird.priceGradient} bg-clip-text text-transparent animate-pulse-glow`}>
-                {bird.price}
-              </span>
-              <button className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-400 hover:to-teal-400 text-white px-4 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-sm font-medium">
-                Bid Now
-              </button>
-            </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
 
 
 
       {/* Reviews Section */}
       <section id="reviews" className="py-16 bg-gradient-to-br from-emerald-100 via-teal-100 to-cyan-100 relative overflow-hidden">
-  <div className="absolute inset-0 opacity-10">
-    <div className="absolute top-10 left-10 animate-float">
-      <MessageCircle className="w-24 h-24 text-emerald-600 rotate-12" />
-    </div>
-    <div className="absolute bottom-10 right-10 animate-float animation-delay-2000">
-      <Star className="w-20 h-20 text-teal-600 -rotate-45" />
-    </div>
-  </div>
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 animate-float">
+            <MessageCircle className="w-24 h-24 text-emerald-600 rotate-12" />
+          </div>
+          <div className="absolute bottom-10 right-10 animate-float animation-delay-2000">
+            <Star className="w-20 h-20 text-teal-600 -rotate-45" />
+          </div>
+        </div>
 
-  <div className="container mx-auto px-4 relative z-10">
-    <div className="max-w-7xl mx-auto">
-      {/* Header */}
-      <div className="text-center mb-14 animate-fade-in-up">
-        <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-800 via-teal-700 to-cyan-800 bg-clip-text text-transparent mb-4">
-          Reviews & Testimonials
-        </h2>
-        <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-          Hear from our racing community across India.
-        </p>
-      </div>
-
-      {/* Reviews */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
-        {[
-          {
-            name: "Arjun Sharma",
-            location: "Bangalore",
-            rating: 5,
-            review:
-              "Exceptional breeding program! The birds I purchased from 360 LOFT INDIA have consistently performed well in races.",
-            gradient: "from-emerald-500 to-teal-500"
-          },
-          {
-            name: "Priya Patel",
-            location: "Mumbai",
-            rating: 5,
-            review:
-              "Outstanding service and healthy birds. The team's knowledge about pigeon racing is impressive.",
-            gradient: "from-teal-500 to-cyan-500"
-          },
-          {
-            name: "Ravi Kumar",
-            location: "Chennai",
-            rating: 5,
-            review:
-              "Best loft in Karnataka! Their champion bloodlines speak for themselves. Professional and supportive team.",
-            gradient: "from-cyan-500 to-blue-500"
-          },
-          {
-            name: "Deepak Singh",
-            location: "Hyderabad",
-            rating: 5,
-            review:
-              "Amazing experience! The birds are well-trained and healthy. The team's passion for pigeon racing is contagious.",
-            gradient: "from-blue-500 to-indigo-500"
-          },
-          {
-            name: "Meera Reddy",
-            location: "Pune",
-            rating: 5,
-            review:
-              "Top-quality birds and excellent guidance. 360 LOFT INDIA helped me get started in pigeon racing.",
-            gradient: "from-indigo-500 to-purple-500"
-          },
-          {
-            name: "Sunil Joshi",
-            location: "Ahmedabad",
-            rating: 5,
-            review:
-              "Fantastic loft with champion birds! Their breeding program produces consistent winners.",
-            gradient: "from-purple-500 to-pink-500"
-          }
-        ].map((review, index) => (
-          <div
-            key={index}
-            className={`bg-white rounded-2xl p-5 shadow-xl hover:shadow-2xl transition-all duration-400 transform hover:scale-[1.02] hover:-translate-y-1 animate-card-entrance`}
-            style={{ animationDelay: `${index * 120}ms` }}
-          >
-            <div className="flex items-center mb-4">
-              <div
-                className={`w-12 h-12 bg-gradient-to-br ${review.gradient} rounded-full flex items-center justify-center mr-3 shadow-md`}
-              >
-                <User className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h4 className="text-base font-semibold text-gray-800">{review.name}</h4>
-                <p className="text-sm text-gray-500">{review.location}</p>
-              </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-14 animate-fade-in-up">
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-800 via-teal-700 to-cyan-800 bg-clip-text text-transparent mb-4">
+                Reviews & Testimonials
+              </h2>
+              <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                Hear from our racing community across India.
+              </p>
             </div>
-            <div className="flex items-center mb-2">
-              {[...Array(review.rating)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-4 h-4 text-yellow-400 fill-current animate-bounce-slow"
-                  style={{ animationDelay: `${i * 100}ms` }}
-                />
+
+            {/* Reviews */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+              {[
+                {
+                  name: "Arjun Sharma",
+                  location: "Bangalore",
+                  rating: 5,
+                  review:
+                    "Exceptional breeding program! The birds I purchased from 360 LOFT INDIA have consistently performed well in races.",
+                  gradient: "from-emerald-500 to-teal-500"
+                },
+                {
+                  name: "Priya Patel",
+                  location: "Mumbai",
+                  rating: 5,
+                  review:
+                    "Outstanding service and healthy birds. The team's knowledge about pigeon racing is impressive.",
+                  gradient: "from-teal-500 to-cyan-500"
+                },
+                {
+                  name: "Ravi Kumar",
+                  location: "Chennai",
+                  rating: 5,
+                  review:
+                    "Best loft in Karnataka! Their champion bloodlines speak for themselves. Professional and supportive team.",
+                  gradient: "from-cyan-500 to-blue-500"
+                },
+                {
+                  name: "Deepak Singh",
+                  location: "Hyderabad",
+                  rating: 5,
+                  review:
+                    "Amazing experience! The birds are well-trained and healthy. The team's passion for pigeon racing is contagious.",
+                  gradient: "from-blue-500 to-indigo-500"
+                },
+                {
+                  name: "Meera Reddy",
+                  location: "Pune",
+                  rating: 5,
+                  review:
+                    "Top-quality birds and excellent guidance. 360 LOFT INDIA helped me get started in pigeon racing.",
+                  gradient: "from-indigo-500 to-purple-500"
+                },
+                {
+                  name: "Sunil Joshi",
+                  location: "Ahmedabad",
+                  rating: 5,
+                  review:
+                    "Fantastic loft with champion birds! Their breeding program produces consistent winners.",
+                  gradient: "from-purple-500 to-pink-500"
+                }
+              ].map((review, index) => (
+                <div
+                  key={index}
+                  className={`bg-white rounded-2xl p-5 shadow-xl hover:shadow-2xl transition-all duration-400 transform hover:scale-[1.02] hover:-translate-y-1 animate-card-entrance`}
+                  style={{ animationDelay: `${index * 120}ms` }}
+                >
+                  <div className="flex items-center mb-4">
+                    <div
+                      className={`w-12 h-12 bg-gradient-to-br ${review.gradient} rounded-full flex items-center justify-center mr-3 shadow-md`}
+                    >
+                      <User className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-base font-semibold text-gray-800">{review.name}</h4>
+                      <p className="text-sm text-gray-500">{review.location}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center mb-2">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-4 h-4 text-yellow-400 fill-current animate-bounce-slow"
+                        style={{ animationDelay: `${i * 100}ms` }}
+                      />
+                    ))}
+                  </div>
+                  <p className="text-sm text-gray-700 leading-relaxed italic">"{review.review}"</p>
+                </div>
               ))}
             </div>
-            <p className="text-sm text-gray-700 leading-relaxed italic">"{review.review}"</p>
-          </div>
-        ))}
-      </div>
 
-      {/* Review Form */}
-      <div className="bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-xl animate-fade-in-up">
-        <h3 className="text-2xl font-bold text-center bg-gradient-to-r from-emerald-800 to-teal-700 bg-clip-text text-transparent mb-6">
-          Leave Your Review
-        </h3>
-        <form className="max-w-2xl mx-auto space-y-4">
-          <div className="grid md:grid-cols-2 gap-4">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="w-full px-4 py-3 bg-white border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all"
-            />
-            <input
-              type="text"
-              placeholder="Your Location"
-              className="w-full px-4 py-3 bg-white border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all"
-            />
+            {/* Review Form */}
+            <div className="bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-xl animate-fade-in-up">
+              <h3 className="text-2xl font-bold text-center bg-gradient-to-r from-emerald-800 to-teal-700 bg-clip-text text-transparent mb-6">
+                Leave Your Review
+              </h3>
+              <form className="max-w-2xl mx-auto space-y-4">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    className="w-full px-4 py-3 bg-white border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Your Location"
+                    className="w-full px-4 py-3 bg-white border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all"
+                  />
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="text-sm text-gray-700 font-medium">Rating:</span>
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star
+                      key={star}
+                      className="w-6 h-6 text-gray-300 hover:text-yellow-400 cursor-pointer transition-colors"
+                    />
+                  ))}
+                </div>
+                <textarea
+                  placeholder="Share your experience..."
+                  rows={4}
+                  className="w-full px-4 py-3 bg-white border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all resize-none"
+                ></textarea>
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 hover:from-emerald-500 hover:via-teal-500 hover:to-cyan-500 text-white font-semibold py-3 rounded-xl transition-transform duration-300 transform hover:scale-105 shadow-lg"
+                >
+                  Submit Review
+                </button>
+              </form>
+            </div>
           </div>
-          <div className="flex items-center space-x-2">
-            <span className="text-sm text-gray-700 font-medium">Rating:</span>
-            {[1, 2, 3, 4, 5].map((star) => (
-              <Star
-                key={star}
-                className="w-6 h-6 text-gray-300 hover:text-yellow-400 cursor-pointer transition-colors"
-              />
-            ))}
-          </div>
-          <textarea
-            placeholder="Share your experience..."
-            rows={4}
-            className="w-full px-4 py-3 bg-white border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-300 transition-all resize-none"
-          ></textarea>
-          <button
-            type="submit"
-            className="w-full bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 hover:from-emerald-500 hover:via-teal-500 hover:to-cyan-500 text-white font-semibold py-3 rounded-xl transition-transform duration-300 transform hover:scale-105 shadow-lg"
-          >
-            Submit Review
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
 
       {/* Contact Section */}
       <section id="contact" className="py-16 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white relative overflow-hidden">
-  {/* Background Twinkling Stars */}
-  <div className="absolute inset-0 pointer-events-none">
-    {[...Array(30)].map((_, i) => (
-      <div
-        key={i}
-        className="absolute animate-twinkle"
-        style={{
-          left: `${Math.random() * 100}%`,
-          top: `${Math.random() * 100}%`,
-          animationDelay: `${Math.random() * 3}s`
-        }}
-      >
-        <div className="w-1 h-1 bg-white rounded-full opacity-70"></div>
-      </div>
-    ))}
-  </div>
-
-  <div className="container mx-auto px-4 relative z-10">
-    <div className="max-w-7xl mx-auto">
-      {/* Heading */}
-      <div className="text-center mb-16 animate-fade-in-up">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
-        <p className="text-lg md:text-xl text-purple-200 max-w-3xl mx-auto leading-relaxed">
-          Ready to join the world of pigeon racing? Contact us to learn more about our birds and training programs.
-        </p>
-      </div>
-
-      {/* Contact Info & Form */}
-      <div className="grid md:grid-cols-2 gap-12">
-        {/* Left: Info */}
-        <div className="animate-slide-in-left space-y-6">
-          <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
-            Contact Information
-          </h3>
-          {[
-            { icon: MapPin, title: "Location", info: "Gangavathi, Karnataka, India", gradient: "from-purple-500 to-pink-500" },
-            { icon: Phone, title: "Phone", info: "+91 98765 43210", gradient: "from-pink-500 to-orange-500" },
-            { icon: Mail, title: "Email", info: "info@360loftindia.com", gradient: "from-orange-500 to-yellow-500" },
-            { icon: Instagram, title: "Instagram", info: "@360_loft_india", gradient: "from-pink-500 to-purple-500" }
-          ].map((item, index) => (
-            <div key={index} className={`flex items-start p-4 bg-white/10 backdrop-blur-md rounded-2xl hover:bg-white/20 transition-transform transform hover:scale-105 animate-card-entrance`} style={{ animationDelay: `${index * 200}ms` }}>
-              <div className={`w-10 h-10 bg-gradient-to-br ${item.gradient} rounded-full flex items-center justify-center mr-4 shadow-md`}>
-                <item.icon className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <p className="font-semibold text-sm text-purple-200">{item.title}</p>
-                {item.title === "Instagram" ? (
-                  <a href="https://www.instagram.com/360_loft_india?igsh=MXZqM3dhc3U0eG95eQ==" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-300 text-sm">
-                    {item.info}
-                  </a>
-                ) : (
-                  <p className="text-white text-sm">{item.info}</p>
-                )}
-              </div>
+        {/* Background Twinkling Stars */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(30)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute animate-twinkle"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`
+              }}
+            >
+              <div className="w-1 h-1 bg-white rounded-full opacity-70"></div>
             </div>
           ))}
         </div>
 
-        {/* Right: Form */}
-        <div className="animate-slide-in-right space-y-4">
-          <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-pink-300 to-orange-300 bg-clip-text text-transparent">
-            Send a Message
-          </h3>
-          {[
-            { type: "text", placeholder: "Your Name" },
-            { type: "email", placeholder: "Your Email" },
-            { type: "tel", placeholder: "Your Phone" }
-          ].map((field, i) => (
-            <input
-              key={i}
-              type={field.type}
-              placeholder={field.placeholder}
-              className="w-full px-5 py-3 bg-white/10 backdrop-blur-md border border-purple-500/30 rounded-xl focus:outline-none focus:border-pink-400 text-white placeholder-purple-300 text-sm transition duration-300 hover:bg-white/15"
-            />
-          ))}
-          <textarea
-            placeholder="Your Message"
-            rows={4}
-            className="w-full px-5 py-3 bg-white/10 backdrop-blur-md border border-purple-500/30 rounded-xl focus:outline-none focus:border-pink-400 text-white placeholder-purple-300 text-sm transition duration-300 hover:bg-white/15 resize-none"
-          ></textarea>
-          <button
-            type="submit"
-            className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 hover:brightness-110 text-white font-bold py-3 rounded-xl transition-all duration-500 transform hover:scale-105 shadow-xl animate-pulse-glow"
-          >
-            Send Message
-          </button>
-        </div>
-      </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            {/* Heading */}
+            <div className="text-center mb-16 animate-fade-in-up">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
+              <p className="text-lg md:text-xl text-purple-200 max-w-3xl mx-auto leading-relaxed">
+                Ready to join the world of pigeon racing? Contact us to learn more about our birds and training programs.
+              </p>
+            </div>
 
-      {/* Visit Loft */}
-      <div className="mt-14 flex justify-center">
-        <div className="p-6 bg-white/10 backdrop-blur-lg rounded-2xl border border-purple-400/30 text-center animate-fade-in-up w-full max-w-xl">
-          <h4 className="text-xl font-bold mb-3 text-purple-200">Visit Our Loft</h4>
-          <p className="text-purple-100 text-sm mb-4 leading-relaxed">
-            We welcome fellow pigeon racing enthusiasts to visit our facility. Please call ahead to schedule your visit.
-          </p>
-          <div className="text-purple-200 text-sm space-y-1">
-            <p className="flex items-center justify-center">
-              <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-              Visiting Hours: 9:00 AM – 5:00 PM (Daily)
-            </p>
-            <p className="flex items-center justify-center">
-              <span className="w-2 h-2 bg-red-400 rounded-full mr-2 animate-pulse"></span>
-              Closed on Major Holidays
-            </p>
+            {/* Contact Info & Form */}
+            <div className="grid md:grid-cols-2 gap-12">
+              {/* Left: Info */}
+              <div className="animate-slide-in-left space-y-6">
+                <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
+                  Contact Information
+                </h3>
+                {[
+                  { icon: MapPin, title: "Location", info: "Gangavathi, Karnataka, India", gradient: "from-purple-500 to-pink-500" },
+                  { icon: Phone, title: "Phone", info: "+91 98765 43210", gradient: "from-pink-500 to-orange-500" },
+                  { icon: Mail, title: "Email", info: "info@360loftindia.com", gradient: "from-orange-500 to-yellow-500" },
+                  { icon: Instagram, title: "Instagram", info: "@360_loft_india", gradient: "from-pink-500 to-purple-500" }
+                ].map((item, index) => (
+                  <div key={index} className={`flex items-start p-4 bg-white/10 backdrop-blur-md rounded-2xl hover:bg-white/20 transition-transform transform hover:scale-105 animate-card-entrance`} style={{ animationDelay: `${index * 200}ms` }}>
+                    <div className={`w-10 h-10 bg-gradient-to-br ${item.gradient} rounded-full flex items-center justify-center mr-4 shadow-md`}>
+                      <item.icon className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-sm text-purple-200">{item.title}</p>
+                      {item.title === "Instagram" ? (
+                        <a href="https://www.instagram.com/360_loft_india?igsh=MXZqM3dhc3U0eG95eQ==" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-300 text-sm">
+                          {item.info}
+                        </a>
+                      ) : (
+                        <p className="text-white text-sm">{item.info}</p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Right: Form */}
+              <div className="animate-slide-in-right space-y-4">
+                <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-pink-300 to-orange-300 bg-clip-text text-transparent">
+                  Send a Message
+                </h3>
+                {[
+                  { type: "text", placeholder: "Your Name" },
+                  { type: "email", placeholder: "Your Email" },
+                  { type: "tel", placeholder: "Your Phone" }
+                ].map((field, i) => (
+                  <input
+                    key={i}
+                    type={field.type}
+                    placeholder={field.placeholder}
+                    className="w-full px-5 py-3 bg-white/10 backdrop-blur-md border border-purple-500/30 rounded-xl focus:outline-none focus:border-pink-400 text-white placeholder-purple-300 text-sm transition duration-300 hover:bg-white/15"
+                  />
+                ))}
+                <textarea
+                  placeholder="Your Message"
+                  rows={4}
+                  className="w-full px-5 py-3 bg-white/10 backdrop-blur-md border border-purple-500/30 rounded-xl focus:outline-none focus:border-pink-400 text-white placeholder-purple-300 text-sm transition duration-300 hover:bg-white/15 resize-none"
+                ></textarea>
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 hover:brightness-110 text-white font-bold py-3 rounded-xl transition-all duration-500 transform hover:scale-105 shadow-xl animate-pulse-glow"
+                >
+                  Send Message
+                </button>
+              </div>
+            </div>
+
+            {/* Visit Loft */}
+            <div className="mt-14 flex justify-center">
+              <div className="p-6 bg-white/10 backdrop-blur-lg rounded-2xl border border-purple-400/30 text-center animate-fade-in-up w-full max-w-xl">
+                <h4 className="text-xl font-bold mb-3 text-purple-200">Visit Our Loft</h4>
+                <p className="text-purple-100 text-sm mb-4 leading-relaxed">
+                  We welcome fellow pigeon racing enthusiasts to visit our facility. Please call ahead to schedule your visit.
+                </p>
+                <div className="text-purple-200 text-sm space-y-1">
+                  <p className="flex items-center justify-center">
+                    <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                    Visiting Hours: 9:00 AM – 5:00 PM (Daily)
+                  </p>
+                  <p className="flex items-center justify-center">
+                    <span className="w-2 h-2 bg-red-400 rounded-full mr-2 animate-pulse"></span>
+                    Closed on Major Holidays
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
 
 
       {/* Footer */}
       <footer className="bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 text-white py-14 relative overflow-hidden">
-  {/* Floating icons */}
-  <div className="absolute inset-0 opacity-20 pointer-events-none">
-    <div className="absolute top-10 left-10 animate-float">
-      <Feather className="w-14 h-14 text-purple-400" />
-    </div>
-    <div className="absolute bottom-10 right-10 animate-float animation-delay-2000">
-      <Heart className="w-12 h-12 text-pink-400" />
-    </div>
-  </div>
+        {/* Floating icons */}
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          <div className="absolute top-10 left-10 animate-float">
+            <Feather className="w-14 h-14 text-purple-400" />
+          </div>
+          <div className="absolute bottom-10 right-10 animate-float animation-delay-2000">
+            <Heart className="w-12 h-12 text-pink-400" />
+          </div>
+        </div>
 
-  {/* Main content */}
-  <div className="container mx-auto px-4 relative z-10">
-    <div className="max-w-5xl mx-auto text-center space-y-6 animate-fade-in-up">
-      {/* Logo & Title */}
-      <div className="flex items-center justify-center gap-4">
-        <img src="/unnamed.png" alt="360 Loft India Logo" className="w-20 h-20 object-contain" />
-        <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-300 via-pink-300 to-orange-300 bg-clip-text text-transparent font-serif">
-          360 LOFT INDIA
-        </h3>
-      </div>
+        {/* Main content */}
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-5xl mx-auto text-center space-y-6 animate-fade-in-up">
+            {/* Logo & Title */}
+            <div className="flex items-center justify-center gap-4">
+              <img src="/unnamed.png" alt="360 Loft India Logo" className="w-20 h-20 object-contain" />
+              <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-300 via-pink-300 to-orange-300 bg-clip-text text-transparent font-serif">
+                360 LOFT INDIA
+              </h3>
+            </div>
 
-      {/* Description */}
-      <p className="text-purple-100 text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
-        Dedicated to the art and sport of pigeon racing. Whether you're a fellow fancier or simply curious about the world's fastest feathered athletes, we invite you to explore our loft and share in our passion.
-      </p>
+            {/* Description */}
+            <p className="text-purple-100 text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+              Dedicated to the art and sport of pigeon racing. Whether you're a fellow fancier or simply curious about the world's fastest feathered athletes, we invite you to explore our loft and share in our passion.
+            </p>
 
-      {/* Divider & Copyright */}
-      <div className="border-t border-purple-400/30 pt-6">
-        <p className="text-purple-200 text-sm">
-          © 2025 360 LOFT INDIA. All rights reserved. | Gangavathi, Karnataka, India
-        </p>
-      </div>
-    </div>
-  </div>
-</footer>
+            {/* Divider & Copyright */}
+            <div className="border-t border-purple-400/30 pt-6">
+              <p className="text-purple-200 text-sm">
+                © 2025 360 LOFT INDIA. All rights reserved. | Gangavathi, Karnataka, India
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
 
     </div>
   );
