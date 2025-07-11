@@ -319,7 +319,7 @@ function App() {
                   A passionate and dedicated racing pigeon fancier, <span className="text-purple-200 font-medium">Pratham Hiral</span> brings a wealth of knowledge in breeding, training, and strategic competition.
                 </p>
                 <p className="text-gray-400">
-                  With deep experience and a keen eye for bloodlines, he has positioned 360 Loft India as a leader in India’s pigeon racing scene.
+                  With deep experience and a keen eye for bloodlines, he has positioned 360 Loft India as a leader in India's pigeon racing scene.
                 </p>
                 <p className="text-purple-200 font-medium">
                   His mission: raise world-class racers and elevate the sport across India.
@@ -1024,7 +1024,7 @@ function App() {
 
 
       {/* Birds for Sale Section */}
-      <section id="sale" className="py-20 bg-gradient-to-br from-green-900 via-teal-900 to-blue-900 relative overflow-hidden">
+      <section id="auction" className="scroll-mt-40 py-20 bg-gradient-to-br from-green-900 via-teal-900 to-blue-900 relative overflow-hidden">
   <div className="absolute inset-0">
     {[...Array(20)].map((_, i) => (
       <div
