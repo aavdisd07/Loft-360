@@ -637,77 +637,108 @@ function App() {
 
           {/* Achievements Section */}
           <div className="w-full mt-10 px-4 flex flex-col items-center">
-            {/* Title */}
             <h4 className="text-2xl font-bold text-purple-600 mb-6 flex items-center justify-center gap-2">
-              <Trophy className="w-6 h-6 text-purple-600 animate-pulse" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-trophy w-6 h-6 text-purple-600 animate-pulse">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                <path d="M4 22h16" />
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+              </svg>
               Victories
             </h4>
-
-            {/* Cards Grid */}
-            <div className="flex flex-row gap-6 overflow-x-auto max-w-full py-4">
-              {[
-                {
-                  name: "Legend Master",
-                  years: "2018–2022",
-                  achievements: ["National Champion 2020", "Speed Record Holder", "Hall of Fame Inductee"],
-                  legacy: "Retired champion with 45 race victories",
-                  gradient: "from-yellow-500 to-orange-500"
-                },
-                {
-                  name: "Golden Hero",
-                  years: "2019–2023",
-                  achievements: ["Regional Champion 2021", "Distance King", "Breeding Stallion"],
-                  legacy: "Exceptional long-distance performer",
-                  gradient: "from-orange-500 to-red-500"
-                },
-                {
-                  name: "Storm King",
-                  years: "2017–2021",
-                  achievements: ["Weather Champion", "Consistent Winner", "Legendary Bloodline"],
-                  legacy: "Undefeated in adverse conditions",
-                  gradient: "from-red-500 to-pink-500"
-                }
-              ].map((legend, index) => (
-                <div
-                  key={index}
-                  className="relative flex-shrink-0 w-64 rounded-xl overflow-visible group transition-all duration-500 cursor-pointer bg-white shadow-lg border-2 border-yellow-300 hover:shadow-xl hover:scale-[1.03] animate-card-entrance"
-                  style={{ animationDelay: `${index * 200}ms` }}
-                  onClick={() => setSelectedLegend(legend)}
-                  tabIndex={0}
-                  aria-label={`View details for ${legend.name}`}
-                >
-                  {/* Square image/icon area */}
-                  <div className={`w-full aspect-square bg-gradient-to-br ${legend.gradient} rounded-lg flex items-center justify-center relative overflow-hidden shadow-md mb-4`}>
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent"></div>
-                    <Star className="w-14 h-14 text-white animate-spin-slow z-10" />
-                    <div className="absolute top-2 right-2 bg-white/30 backdrop-blur-sm rounded-full p-1 z-10">
-                      <Trophy className="w-4 h-4 text-white animate-bounce-slow" />
-                    </div>
-                    <div className="absolute bottom-2 left-2 bg-white/20 backdrop-blur-sm rounded-full px-2 py-0.5 z-10">
-                      <span className="text-white text-xs font-semibold">LEGEND</span>
-                    </div>
+            <div className="flex flex-wrap justify-center items-start gap-6 w-full">
+              <div className="w-full max-w-sm bg-gradient-to-br from-slate-800/90 to-purple-900/90 backdrop-blur-xl rounded-2xl p-5 border border-purple-500/30 shadow-2xl animate-fade-in">
+                <div className="bg-gradient-to-r from-slate-700/60 to-orange-800/40 border border-orange-400/30 rounded-xl p-4 shadow-md">
+                  <div className="flex items-center justify-center mb-3">
+                    <h5 className="text-orange-300 font-semibold text-sm text-center">2016 Season</h5>
                   </div>
-                  <div className="px-4 pb-4">
-                    <h3 className="text-lg text-center font-bold text-gray-800 mb-1">{legend.name}</h3>
-                    <p className="text-orange-600 text-center text-sm font-medium mb-2">{legend.years}</p>
-                    <ul className="mb-3 space-y-1">
-                      {legend.achievements.map((achieve, idx) => (
-                        <li key={idx} className="flex items-center text-sm">
-                          <Trophy className="w-4 h-4 text-yellow-500 mr-2 animate-bounce-slow" />
-                          <span className="text-gray-700">{achieve}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="text-gray-600 italic text-xs leading-snug bg-gradient-to-r from-yellow-50 to-orange-50 p-2 rounded-md">
-                      {legend.legacy}
-                    </p>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center py-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-white font-bold px-2 py-0.5 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400">1st</span>
+                        <span className="text-white text-sm">100KM</span>
+                      </div>
+                      <span className="text-orange-200 text-xs font-medium">ARMANI</span>
+                    </div>
+                    <div className="flex justify-between items-center py-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-white font-bold px-2 py-0.5 rounded-full bg-gradient-to-r from-amber-400 to-orange-500">3rd</span>
+                        <span className="text-white text-sm">100KM</span>
+                      </div>
+                      <span className="text-orange-200 text-xs font-medium">BLUEE</span>
+                    </div>
+                    <div className="flex justify-between items-center py-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-white font-bold px-2 py-0.5 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400">1st</span>
+                        <span className="text-white text-sm">200KM</span>
+                      </div>
+                      <span className="text-orange-200 text-xs font-medium">BLACK JACK</span>
+                    </div>
+                    <div className="flex justify-between items-center py-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-white font-bold px-2 py-0.5 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400">1st</span>
+                        <span className="text-white text-sm">300KM</span>
+                      </div>
+                      <span className="text-orange-200 text-xs font-medium">JUNGLEE</span>
+                    </div>
+                    <div className="flex justify-between items-center py-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-white font-bold px-2 py-0.5 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400">1st</span>
+                        <span className="text-white text-sm">500KM</span>
+                      </div>
+                      <span className="text-orange-200 text-xs font-medium">BEAUTY</span>
+                    </div>
                   </div>
                 </div>
-              ))}
+              </div>
+              <div className="w-full max-w-sm bg-gradient-to-br from-slate-800/90 to-purple-900/90 backdrop-blur-xl rounded-2xl p-5 border border-purple-500/30 shadow-2xl animate-fade-in">
+                <div className="bg-gradient-to-r from-slate-700/60 to-orange-800/40 border border-orange-400/30 rounded-xl p-4 shadow-md">
+                  <div className="flex items-center justify-center mb-3">
+                    <h5 className="text-orange-300 font-semibold text-sm text-center">2017 Season</h5>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center py-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-white font-bold px-2 py-0.5 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400">1st</span>
+                        <span className="text-white text-sm">120KM</span>
+                      </div>
+                      <span className="text-orange-200 text-xs font-medium">NIGHT RIDER</span>
+                    </div>
+                    <div className="flex justify-between items-center py-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-white font-bold px-2 py-0.5 rounded-full bg-gradient-to-r from-red-400 to-orange-500">4th</span>
+                        <span className="text-white text-sm">150KM</span>
+                      </div>
+                      <span className="text-orange-200 text-xs font-medium">BLAZE</span>
+                    </div>
+                    <div className="flex justify-between items-center py-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-white font-bold px-2 py-0.5 rounded-full bg-gradient-to-r from-amber-400 to-orange-500">2nd</span>
+                        <span className="text-white text-sm">250KM</span>
+                      </div>
+                      <span className="text-orange-200 text-xs font-medium">FLASH</span>
+                    </div>
+                    <div className="flex justify-between items-center py-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-white font-bold px-2 py-0.5 rounded-full bg-gradient-to-r from-purple-400 to-purple-500">3rd</span>
+                        <span className="text-white text-sm">350KM</span>
+                      </div>
+                      <span className="text-orange-200 text-xs font-medium">TWISTER</span>
+                    </div>
+                    <div className="flex justify-between items-center py-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-white font-bold px-2 py-0.5 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400">1st</span>
+                        <span className="text-white text-sm">450KM</span>
+                      </div>
+                      <span className="text-orange-200 text-xs font-medium">NIGHT RIDER</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-
 
 
 
