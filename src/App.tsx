@@ -1239,7 +1239,7 @@ function App() {
             </div>
 
             {/* Birds for Sale */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
                   name: "Young Champion",
@@ -1309,7 +1309,7 @@ function App() {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
