@@ -67,6 +67,83 @@ function App() {
     { id: 'contact', label: 'Contact' }
   ];
 
+  // Backbone detailed data
+  const backboneMembers = [
+    {
+      name: "WILSON SIR",
+      role: "Breeding Expert",
+      club: "KRPC Bangalore Club Member",
+      exp: "15+ years",
+      description: `Member of KRPC Bangalore club with 15+ years experience in breeding and birds. He has helped me achieve whatever 360 Loft India has done till now.`,
+    },
+    {
+      name: "VINOD SIR",
+      role: "Racing Expert",
+      club: "KRPC Bangalore Club Member",
+      exp: "20+ years",
+      description: `Member of KRPC Bangalore club with 20+ years experience in racing, pairing, breeding, and maintenance of the loft. He has helped me in building my racing team and birds. He has played an important role in what I have achieved till date.`,
+    },
+    {
+      name: "VIKI SIR",
+      role: "Global Expert",
+      club: "Big Wings Factory",
+      exp: "4+ years",
+      description: `Very well-known around the world for his achievements and the quality of birds he owns and has bred till date. He has taken part in various clubs in India and in one lofts around the world. He has been the only person in India to start one loft race in India (IDI). I thank sir for all his support and guidance till date.`,
+    },
+    {
+      name: "SHIVU MURTHI",
+      role: "Loft Jockey",
+      club: "",
+      exp: "",
+      description: `My loft jockey and takes care of my birds and maintenance of the birds.`,
+    },
+    {
+      name: "MARYA DOLLY",
+      role: "Training Head",
+      club: "",
+      exp: "",
+      description: `My loft training head and helps me in the racing season.`,
+    },
+    {
+      name: "MAHESH RX",
+      role: "Racing Specialist",
+      club: "",
+      exp: "",
+      description: `Takes care of my training and my racing season.`,
+    },
+    {
+      name: "SANTHU S",
+      role: "Team Member",
+      club: "",
+      exp: "",
+      description: `Key support member of the backbone team.`,
+    },
+    {
+      name: "SHIVU",
+      role: "Team Member",
+      club: "",
+      exp: "",
+      description: `Key support member of the backbone team.`,
+    },
+  ];
+
+  const [selectedBackbone, setSelectedBackbone] = useState<null | typeof backboneMembers[0]>(null);
+
+  // Wall of Fame Section State
+  const [selectedLegend, setSelectedLegend] = useState<null | {
+    name: string;
+    years: string;
+    achievements: string[];
+    legacy: string;
+    gradient: string;
+  }>(null);
+
+  // Add state for selected strategy card
+  const [selectedStrategy, setSelectedStrategy] = useState<null | {
+    title: string;
+    short: string;
+    full: string;
+  }>(null);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-x-hidden">
@@ -357,130 +434,67 @@ function App() {
             </div>
             <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-6"></div>
             <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto">
-              Meet the powerhouse behind 360 Loft India – a skilled, passionate team keeping our pigeons at peak performance.
+              At 360 Loft India, our team is united by a shared passion for racing pigeons. From expert breeders and caretakers to training specialists, every member plays a key role in maintaining the health, performance, and success of our birds. With dedication, discipline, and teamwork, we strive to achieve excellence in every race and breeding season.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                name: "WILSON SIR",
-                role: "Breeding Expert",
-                exp: "15+ Years",
-                club: "KRPC Bangalore Club Member",
-                tag: "Breeding Expert",
-                tagColor: "blue",
-                icon: <Heart className="w-4 h-4 text-blue-400 mr-1" />,
-              },
-              {
-                name: "VINOD SIR",
-                role: "Racing Expert",
-                exp: "20+ Years",
-                club: "KRPC Bangalore Club Member",
-                tag: "Racing Expert",
-                tagColor: "green",
-                icon: <Trophy className="w-4 h-4 text-green-400 mr-1" />,
-              },
-              {
-                name: "VIKI SIR",
-                role: "Big Wings Factory",
-                exp: "4+ years",
-                club: "Big Wings Factory",
-                tag: "Global Expert",
-                tagColor: "yellow",
-                icon: <Award className="w-4 h-4 text-yellow-400 mr-1" />,
-              },
-              {
-                name: "SHIVU MURTHI",
-                role: "Loft Jockey",
-                exp: "",
-                club: "",
-                tag: "Bird Care",
-                tagColor: "indigo",
-                icon: <Heart className="w-4 h-4 text-indigo-400 mr-1" />,
-              },
-              {
-                name: "MARYA DOLLY",
-                role: "Training Head",
-                exp: "",
-                club: "",
-                tag: "Training Expert",
-                tagColor: "pink",
-                icon: <Zap className="w-4 h-4 text-pink-400 mr-1" />,
-              },
-              {
-                name: "MAHESH RX",
-                role: "Racing Specialist",
-                exp: "",
-                club: "",
-                tag: "Race Training",
-                tagColor: "teal",
-                icon: <Target className="w-4 h-4 text-teal-400 mr-1" />,
-              }
-            ].map(({ name, role, exp, club, tag, tagColor, icon }, index) => (
-              <div
+            {backboneMembers.map((member, index) => (
+              <button
                 key={index}
-                className={`bg-gradient-to-br from-slate-800/80 to-purple-900/80 backdrop-blur-md rounded-xl p-5 shadow-xl border border-purple-500/20 animate-fade-in-up`}
+                className="bg-gradient-to-br from-slate-800/80 to-purple-900/80 backdrop-blur-md rounded-xl p-5 shadow-xl border border-purple-500/20 animate-fade-in-up focus:outline-none hover:scale-105 transition-transform duration-200 relative group"
+                onClick={() => setSelectedBackbone(member)}
+                tabIndex={0}
+                aria-label={`View details for ${member.name}`}
               >
                 <div className="text-center mb-4">
-                  <div className="w-24 h-24 mx-auto mb-2 rounded-full overflow-hidden border-2 border-white shadow-lg bg-gradient-to-br from-purple-500 to-purple-800">
-                    <img
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBvqzyx_zoi6q2c0Gd1XnE7wysD9PGOLe3-A&s"
-                      alt={name}
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="w-24 h-24 mx-auto mb-2 rounded-full overflow-hidden border-2 border-white shadow-lg bg-gradient-to-br from-purple-500 to-purple-800 flex items-center justify-center text-4xl font-bold text-white">
+                    {/* Placeholder: initials */}
+                    {member.name.split(" ").map(w => w[0]).join("")}
                   </div>
-                  <h3 className="text-xl font-semibold text-white font-serif">{name}</h3>
-                  {club && <p className="text-sm text-purple-300">{club}</p>}
-                  {exp && <p className="text-sm text-blue-300">{exp}</p>}
+                  <h3 className="text-xl font-semibold text-white font-serif">{member.name}</h3>
+                  {member.club && <p className="text-sm text-purple-300">{member.club}</p>}
+                  {member.exp && <p className="text-sm text-blue-300">{member.exp}</p>}
                 </div>
                 <p className="text-sm text-gray-300 text-center mb-3">
-                  {role === "Breeding Expert"
-                    ? "Expert in breeding and loft setup. Key contributor to 360 Loft India's journey."
-                    : role === "Racing Expert"
-                      ? "Supports in racing, pairing, and team building with immense experience."
-                      : role === "Global Expert"
-                        ? "Founder of IDI and renowned for world-class racing pigeons and support."
-                        : role === "Loft Jockey"
-                          ? "Takes care of bird welfare and daily loft operations with discipline."
-                          : role === "Training Head"
-                            ? "Responsible for training routines and seasonal race prep."
-                            : "Plays an integral role in training and maintaining race-readiness."}
+                  {member.role}
                 </p>
                 <div className="flex justify-center">
-                  <div className={`flex items-center bg-${tagColor}-600/20 px-3 py-1 rounded-full`}>
-                    {icon}
-                    <span className={`text-${tagColor}-300 text-xs font-medium`}>{tag}</span>
+                  <div className="flex items-center bg-purple-600/20 px-3 py-1 rounded-full">
+                    <User className="w-4 h-4 text-purple-400 mr-1" />
+                    <span className="text-purple-300 text-xs font-medium">{member.role}</span>
                   </div>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
 
-          {/* Support Team Grid */}
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {[
-              { name: "SANTHU S", role: "Team Member", color: "orange" },
-              { name: "SHIVU", role: "Team Member", color: "cyan" }
-            ].map(({ name, role, color }, i) => (
-              <div
-                key={i}
-                className={`bg-gradient-to-br from-slate-800/80 to-purple-900/80 backdrop-blur-md rounded-xl p-4 shadow-lg border border-purple-500/20`}
-              >
-                <div className="text-center">
-                  <div className={`w-20 h-20 mx-auto mb-2 rounded-full overflow-hidden bg-gradient-to-br from-${color}-600 to-purple-600`}>
-                    <img
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBvqzyx_zoi6q2c0Gd1XnE7wysD9PGOLe3-A&s"
-                      alt={name}
-                      className="w-full h-full object-cover border-2 border-white shadow"
-                    />
+          {/* Modal for member details */}
+          {selectedBackbone && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+              <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative animate-fade-in-up">
+                <button
+                  className="absolute top-3 right-3 text-gray-500 hover:text-purple-600 text-2xl font-bold focus:outline-none"
+                  onClick={() => setSelectedBackbone(null)}
+                  aria-label="Close details"
+                >
+                  ×
+                </button>
+                <div className="flex flex-col items-center mb-4">
+                  <div className="w-28 h-28 rounded-full bg-gradient-to-br from-purple-500 to-purple-800 flex items-center justify-center text-5xl font-bold text-white mb-3">
+                    {selectedBackbone.name.split(" ").map(w => w[0]).join("")}
                   </div>
-                  <h3 className="text-lg font-semibold text-white">{name}</h3>
-                  <p className="text-sm text-gray-400">{role}</p>
+                  <h3 className="text-2xl font-bold text-purple-800 mb-1 text-center">{selectedBackbone.name}</h3>
+                  <p className="text-purple-500 text-lg font-semibold mb-1 text-center">{selectedBackbone.role}</p>
+                  {selectedBackbone.club && <p className="text-sm text-purple-400 mb-1 text-center">{selectedBackbone.club}</p>}
+                  {selectedBackbone.exp && <p className="text-sm text-blue-400 mb-2 text-center">{selectedBackbone.exp}</p>}
                 </div>
+                <p className="text-gray-700 text-base leading-relaxed text-center whitespace-pre-line">{selectedBackbone.description}</p>
               </div>
-            ))}
-          </div>
+            </div>
+          )}
+
+          {/* Support Team Grid removed, now included in backboneMembers */}
         </div>
       </section>
 
@@ -533,9 +547,12 @@ function App() {
                   full: "A clean, well-ventilated loft prevents disease and reduces stress. Regular cleaning, disinfection, and parasite control boost immunity and keep pigeons race-ready.",
                 },
               ].map((item, index) => (
-                <div
+                <button
                   key={index}
-                  className="group relative overflow-hidden bg-white/40 backdrop-blur-lg rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105"
+                  className="group relative overflow-hidden bg-white/40 backdrop-blur-lg rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 focus:outline-none"
+                  onClick={() => setSelectedStrategy(item)}
+                  tabIndex={0}
+                  aria-label={`View details for ${item.title}`}
                 >
                   {/* Card Top */}
                   <div className="p-6 sm:p-8 flex flex-col items-center text-center">
@@ -545,19 +562,35 @@ function App() {
                     <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">{item.title}</h3>
                     <p className="text-sm sm:text-base text-gray-700">{item.short}</p>
                   </div>
-
-                  {/* Slide-up Drawer with Glass Effect */}
-                  <div className="absolute bottom-0 left-0 w-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-20">
-                    <div className="bg-white/70 backdrop-blur-xl border-t border-gradient-to-r from-yellow-400 via-orange-400 to-pink-400 rounded-b-3xl p-6 text-gray-800 shadow-inner">
-                      <p className="text-sm sm:text-base leading-relaxed font-medium">{item.full}</p>
-                    </div>
-                  </div>
-                </div>
+                </button>
               ))}
             </div>
           </div>
         </div>
       </section>
+
+      {/* Modal for strategy details */}
+      {selectedStrategy && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative animate-fade-in-up">
+            <button
+              className="absolute top-3 right-3 text-gray-500 hover:text-orange-600 text-2xl font-bold focus:outline-none"
+              onClick={() => setSelectedStrategy(null)}
+              aria-label="Close details"
+            >
+              ×
+            </button>
+            <div className="flex flex-col items-center mb-4">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center text-4xl font-bold text-white mb-3">
+                <Trophy className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-orange-800 mb-1 text-center">{selectedStrategy.title}</h3>
+              <p className="text-orange-500 text-lg font-semibold mb-1 text-center">{selectedStrategy.short}</p>
+            </div>
+            <p className="text-gray-700 text-base leading-relaxed text-center whitespace-pre-line">{selectedStrategy.full}</p>
+          </div>
+        </div>
+      )}
 
 
 
@@ -611,74 +644,66 @@ function App() {
             </h4>
 
             {/* Cards Grid */}
-            <div className="flex flex-wrap justify-center items-start gap-6 w-full">
-
-              {/* === 2016 Card === */}
-              <div className="w-full max-w-sm bg-gradient-to-br from-slate-800/90 to-purple-900/90 backdrop-blur-xl rounded-2xl p-5 border border-purple-500/30 shadow-2xl animate-fade-in">
-                <div className="bg-gradient-to-r from-slate-700/60 to-orange-800/40 border border-orange-400/30 rounded-xl p-4 shadow-md">
-                  <div className="flex items-center justify-center mb-3">
-                    <h5 className="text-orange-300 font-semibold text-sm text-center">2016 Season</h5>
+            <div className="flex flex-row gap-6 overflow-x-auto max-w-full py-4">
+              {[
+                {
+                  name: "Legend Master",
+                  years: "2018–2022",
+                  achievements: ["National Champion 2020", "Speed Record Holder", "Hall of Fame Inductee"],
+                  legacy: "Retired champion with 45 race victories",
+                  gradient: "from-yellow-500 to-orange-500"
+                },
+                {
+                  name: "Golden Hero",
+                  years: "2019–2023",
+                  achievements: ["Regional Champion 2021", "Distance King", "Breeding Stallion"],
+                  legacy: "Exceptional long-distance performer",
+                  gradient: "from-orange-500 to-red-500"
+                },
+                {
+                  name: "Storm King",
+                  years: "2017–2021",
+                  achievements: ["Weather Champion", "Consistent Winner", "Legendary Bloodline"],
+                  legacy: "Undefeated in adverse conditions",
+                  gradient: "from-red-500 to-pink-500"
+                }
+              ].map((legend, index) => (
+                <div
+                  key={index}
+                  className="relative flex-shrink-0 w-64 rounded-xl overflow-visible group transition-all duration-500 cursor-pointer bg-white shadow-lg border-2 border-yellow-300 hover:shadow-xl hover:scale-[1.03] animate-card-entrance"
+                  style={{ animationDelay: `${index * 200}ms` }}
+                  onClick={() => setSelectedLegend(legend)}
+                  tabIndex={0}
+                  aria-label={`View details for ${legend.name}`}
+                >
+                  {/* Square image/icon area */}
+                  <div className={`w-full aspect-square bg-gradient-to-br ${legend.gradient} rounded-lg flex items-center justify-center relative overflow-hidden shadow-md mb-4`}>
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent"></div>
+                    <Star className="w-14 h-14 text-white animate-spin-slow z-10" />
+                    <div className="absolute top-2 right-2 bg-white/30 backdrop-blur-sm rounded-full p-1 z-10">
+                      <Trophy className="w-4 h-4 text-white animate-bounce-slow" />
+                    </div>
+                    <div className="absolute bottom-2 left-2 bg-white/20 backdrop-blur-sm rounded-full px-2 py-0.5 z-10">
+                      <span className="text-white text-xs font-semibold">LEGEND</span>
+                    </div>
                   </div>
-
-                  <div className="space-y-2">
-                    {[
-                      { position: "1st", distance: "100KM", birds: "ARMANI", gradient: "from-yellow-400 to-orange-400" },
-                      { position: "1st", distance: "200KM", birds: "BLACK JACK", gradient: "from-yellow-400 to-orange-400" },
-                      { position: "1st", distance: "300KM", birds: "JUNGLEE", gradient: "from-yellow-400 to-orange-400" },
-                      { position: "1st", distance: "500KM", birds: "BEAUTY", gradient: "from-yellow-400 to-orange-400" },
-                      { position: "3rd", distance: "100KM", birds: "BLUEE", gradient: "from-amber-400 to-orange-500" },
-                      // { position: "3rd", distance: "150KM", birds: "BLACK JACK", gradient: "from-amber-400 to-orange-500" },
-                      // { position: "3rd", distance: "300KM", birds: "ARMANI & BEAUTY", gradient: "from-amber-400 to-orange-500" },
-                      // { position: "5th", distance: "100KM", birds: "JUNGLEE", gradient: "from-purple-400 to-purple-500" },
-                      // { position: "5th", distance: "200KM", birds: "BLUEE", gradient: "from-purple-400 to-purple-500" },
-                      // { position: "5th", distance: "700KM", birds: "ARMANI", gradient: "from-purple-400 to-purple-500" }
-                    ]
-                      .sort((a, b) => parseInt(a.distance) - parseInt(b.distance))
-                      .map((result, i) => (
-                        <div key={i} className="flex justify-between items-center py-1">
-                          <div className="flex items-center gap-2">
-                            <span className={`text-xs text-white font-bold px-2 py-0.5 rounded-full bg-gradient-to-r ${result.gradient}`}>
-                              {result.position}
-                            </span>
-                            <span className="text-white text-sm">{result.distance}</span>
-                          </div>
-                          <span className="text-orange-200 text-xs font-medium">{result.birds}</span>
-                        </div>
+                  <div className="px-4 pb-4">
+                    <h3 className="text-lg text-center font-bold text-gray-800 mb-1">{legend.name}</h3>
+                    <p className="text-orange-600 text-center text-sm font-medium mb-2">{legend.years}</p>
+                    <ul className="mb-3 space-y-1">
+                      {legend.achievements.map((achieve, idx) => (
+                        <li key={idx} className="flex items-center text-sm">
+                          <Trophy className="w-4 h-4 text-yellow-500 mr-2 animate-bounce-slow" />
+                          <span className="text-gray-700">{achieve}</span>
+                        </li>
                       ))}
+                    </ul>
+                    <p className="text-gray-600 italic text-xs leading-snug bg-gradient-to-r from-yellow-50 to-orange-50 p-2 rounded-md">
+                      {legend.legacy}
+                    </p>
                   </div>
                 </div>
-              </div>
-
-              {/* === 2017 Card === */}
-              <div className="w-full max-w-sm bg-gradient-to-br from-slate-800/90 to-purple-900/90 backdrop-blur-xl rounded-2xl p-5 border border-purple-500/30 shadow-2xl animate-fade-in">
-                <div className="bg-gradient-to-r from-slate-700/60 to-orange-800/40 border border-orange-400/30 rounded-xl p-4 shadow-md">
-                  <div className="flex items-center justify-center mb-3">
-                    <h5 className="text-orange-300 font-semibold text-sm text-center">2017 Season</h5>
-                  </div>
-
-                  <div className="space-y-2">
-                    {[
-                      { position: "1st", distance: "120KM", birds: "NIGHT RIDER", gradient: "from-yellow-400 to-orange-400" },
-                      { position: "2nd", distance: "250KM", birds: "FLASH", gradient: "from-amber-400 to-orange-500" },
-                      { position: "3rd", distance: "350KM", birds: "TWISTER", gradient: "from-purple-400 to-purple-500" },
-                      { position: "1st", distance: "450KM", birds: "NIGHT RIDER", gradient: "from-yellow-400 to-orange-400" },
-                      { position: "4th", distance: "150KM", birds: "BLAZE", gradient: "from-red-400 to-orange-500" }
-                    ]
-                      .sort((a, b) => parseInt(a.distance) - parseInt(b.distance))
-                      .map((result, i) => (
-                        <div key={i} className="flex justify-between items-center py-1">
-                          <div className="flex items-center gap-2">
-                            <span className={`text-xs text-white font-bold px-2 py-0.5 rounded-full bg-gradient-to-r ${result.gradient}`}>
-                              {result.position}
-                            </span>
-                            <span className="text-white text-sm">{result.distance}</span>
-                          </div>
-                          <span className="text-orange-200 text-xs font-medium">{result.birds}</span>
-                        </div>
-                      ))}
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -690,7 +715,7 @@ function App() {
       </section>
 
       {/* Our Top Breeders Section */}
-      <section className="py-8 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 relative overflow-hidden">
+      <section className="py-8 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 relative overflow-hidden" id="breeders">
         <div className="absolute inset-0 z-0">
           {[...Array(15)].map((_, i) => (
             <div
@@ -719,7 +744,7 @@ function App() {
             <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-4 rounded-full" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
+          <div className="flex flex-row gap-6 overflow-x-auto max-w-full py-4">
             {[
               {
                 name: "Thunder Wing",
@@ -772,71 +797,44 @@ function App() {
             ].map((bird, i) => (
               <div
                 key={i}
-                className={`bg-white/10 backdrop-blur-xl rounded-xl p-6 border-2 border-white/20 hover:scale-105 hover:bg-white/15 hover:border-white/30 transition-all duration-500 animate-fade-in-up cursor-pointer group shadow-2xl hover:shadow-purple-500/25 relative overflow-hidden`}
-                style={{ animationDelay: `${i * 100}ms` }}
+                className="relative flex-shrink-0 w-56 rounded-xl overflow-visible group transition-all duration-500 cursor-pointer"
               >
-                {/* Animated background gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${bird.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-
-                {/* Floating particles effect */}
-                <div className="absolute top-2 right-2 w-2 h-2 bg-white/60 rounded-full animate-pulse group-hover:animate-bounce" />
-                <div className="absolute bottom-2 left-2 w-1 h-1 bg-purple-400/60 rounded-full animate-ping" />
-
-                {/* Enhanced Image Section */}
-                <div className={`w-full h-28 bg-gradient-to-br ${bird.gradient} rounded-xl mb-4 relative overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-500`}>
-                  <div className="absolute inset-0 bg-white/10 group-hover:bg-white/20 transition-colors duration-500" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-4xl group-hover:scale-110 transition-transform duration-500 filter drop-shadow-lg">
-                      {bird.icon}
-                    </span>
-                  </div>
-                  <div className="absolute top-2 right-2">
-                    <div className="w-2 h-2 bg-white/80 rounded-full animate-pulse group-hover:bg-yellow-300" />
-                  </div>
+                {/* Square image/icon area */}
+                <div className={`w-full aspect-square bg-gradient-to-br ${bird.gradient} rounded-xl flex items-center justify-center shadow-lg relative z-10 transition-all duration-500 overflow-hidden`}>
+                  {/* Icon with blur on hover */}
+                  <span className="text-5xl transition-transform duration-500 filter drop-shadow-lg group-hover:scale-110 group-hover:blur-sm">
+                    {bird.icon}
+                  </span>
                   {/* Shimmer effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                </div>
-
-                {/* Enhanced Text Content */}
-                <div className="relative  z-10">
-                  <h3 className="text-lg font-bold text-white text-center mb-2 group-hover:text-purple-100 transition-colors duration-300">
-                    {bird.name}
-                  </h3>
-                  <p className="text-purple-300 text-center text-sm mb-2 group-hover:text-purple-200 transition-colors duration-300">
-                    {bird.breed}
-                  </p>
-                  <div className="flex  items-center justify-center text-sm text-purple-200 mb-3 group-hover:text-purple-100 transition-colors duration-300">
-                    <Trophy className="w-4 h-4 text-yellow-300  mr-2 flex-shrink-0 group-hover:text-yellow-200 group-hover:scale-110 transition-all duration-300" />
-                    <span>{bird.achievement}</span>
-                  </div>
-
-                  {/* Progress bar indicator */}
-                  <div className="w-full bg-white/20 rounded-full h-1 mb-2 overflow-hidden">
-                    <div
-                      className={`h-full bg-gradient-to-r ${bird.gradient} rounded-full transition-all duration-1000 group-hover:w-full`}
-                      style={{ width: '60%' }}
-                    />
-                  </div>
-
- 
-                  {/* Rating stars */}
-                  <div className="flex items-center justify-center  space-x-1">
-                    {[...Array(5)].map((_, starIndex) => (
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none" />
+                  {/* Details overlay, hidden by default, appears on hover */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                    <h3 className="text-lg font-bold text-white text-center mb-1 drop-shadow-lg">{bird.name}</h3>
+                    <p className="text-purple-200 text-center text-sm mb-1 drop-shadow-lg">{bird.breed}</p>
+                    <div className="flex items-center justify-center text-sm text-yellow-200 mb-2 drop-shadow-lg">
+                      <Trophy className="w-4 h-4 text-yellow-300 mr-2 flex-shrink-0" />
+                      <span>{bird.achievement}</span>
+                    </div>
+                    {/* Progress bar indicator */}
+                    <div className="w-full bg-white/30 rounded-full h-1 mb-2 overflow-hidden">
                       <div
-                        key={starIndex}
-                        className={`w-3 h-3  ${starIndex < 4 ? 'text-yellow-300' : 'text-gray-500'} transition-colors duration-300 text-center `}
-                      >
-                        ⭐
-                      </div>
-                    ))}
-                    {/* <span className="text-xs text-purple-300 ml-2 group-hover:text-purple-200 transition-colors duration-300">
-                    Elite
-                  </span> */}
+                        className={`h-full bg-gradient-to-r ${bird.gradient} rounded-full transition-all duration-1000`}
+                        style={{ width: '60%' }}
+                      />
+                    </div>
+                    {/* Rating stars */}
+                    <div className="flex items-center justify-center space-x-1">
+                      {[...Array(5)].map((_, starIndex) => (
+                        <div
+                          key={starIndex}
+                          className={`w-3 h-3 ${starIndex < 4 ? 'text-yellow-300' : 'text-gray-400'} text-center`}
+                        >
+                          ⭐
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-
-                {/* Hover glow effect */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-500/0 via-pink-500/0 to-purple-500/0 group-hover:from-purple-500/10 group-hover:via-pink-500/10 group-hover:to-purple-500/10 transition-all duration-500 pointer-events-none" />
               </div>
             ))}
           </div>
@@ -943,8 +941,8 @@ function App() {
               </p>
             </div>
 
-            {/* Cards */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+            {/* Cards Row */}
+            <div className="flex flex-row flex-wrap justify-center gap-6 py-4">
               {[
                 {
                   name: "Legend Master",
@@ -970,35 +968,79 @@ function App() {
               ].map((legend, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl p-5 shadow-lg border-2 border-yellow-300 hover:shadow-xl hover:scale-[1.03] transition-all duration-300 transform animate-card-entrance"
+                  className="relative flex-shrink-0 w-64 rounded-xl overflow-visible group transition-all duration-500 cursor-pointer bg-white shadow-lg border-2 border-yellow-300 hover:shadow-xl hover:scale-[1.03] animate-card-entrance"
                   style={{ animationDelay: `${index * 200}ms` }}
+                  onClick={() => setSelectedLegend(legend)}
+                  tabIndex={0}
+                  aria-label={`View details for ${legend.name}`}
                 >
-                  <div className={`w-full h-40 bg-gradient-to-br ${legend.gradient} rounded-lg mb-4 flex items-center justify-center relative overflow-hidden shadow-md`}>
+                  {/* Square image/icon area */}
+                  <div className={`w-full aspect-square bg-gradient-to-br ${legend.gradient} rounded-lg flex items-center justify-center relative overflow-hidden shadow-md mb-4`}>
                     <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent"></div>
-                    <Star className="w-14 h-14 text-white animate-spin-slow" />
-                    <div className="absolute top-2 right-2 bg-white/30 backdrop-blur-sm rounded-full p-1">
+                    <Star className="w-14 h-14 text-white animate-spin-slow z-10" />
+                    <div className="absolute top-2 right-2 bg-white/30 backdrop-blur-sm rounded-full p-1 z-10">
                       <Trophy className="w-4 h-4 text-white animate-bounce-slow" />
                     </div>
-                    <div className="absolute bottom-2 left-2 bg-white/20 backdrop-blur-sm rounded-full px-2 py-0.5">
+                    <div className="absolute bottom-2 left-2 bg-white/20 backdrop-blur-sm rounded-full px-2 py-0.5 z-10">
                       <span className="text-white text-xs font-semibold">LEGEND</span>
                     </div>
                   </div>
-                  <h3 className="text-lg text-center font-bold text-gray-800 mb-1">{legend.name}</h3>
-                  <p className="text-orange-600 text-center text-sm font-medium mb-2">{legend.years}</p>
-                  <ul className="mb-3 space-y-1">
-                    {legend.achievements.map((achieve, idx) => (
-                      <li key={idx} className="flex items-center text-sm">
-                        <Trophy className="w-4 h-4 text-yellow-500 mr-2 animate-bounce-slow" />
+                  <div className="px-4 pb-4">
+                    <h3 className="text-lg text-center font-bold text-gray-800 mb-1">{legend.name}</h3>
+                    <p className="text-orange-600 text-center text-sm font-medium mb-2">{legend.years}</p>
+                    <ul className="mb-3 space-y-1">
+                      {legend.achievements.map((achieve, idx) => (
+                        <li key={idx} className="flex items-center text-sm">
+                          <Trophy className="w-4 h-4 text-yellow-500 mr-2 animate-bounce-slow" />
+                          <span className="text-gray-700">{achieve}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-gray-600 italic text-xs leading-snug bg-gradient-to-r from-yellow-50 to-orange-50 p-2 rounded-md">
+                      {legend.legacy}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Modal for full slide */}
+            {selectedLegend && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-lg">
+                <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-8 relative animate-fade-in-up">
+                  <button
+                    className="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl font-bold focus:outline-none"
+                    onClick={() => setSelectedLegend(null)}
+                    aria-label="Close"
+                  >
+                    ×
+                  </button>
+                  <div className={`w-full aspect-square bg-gradient-to-br ${selectedLegend.gradient} rounded-lg flex items-center justify-center relative overflow-hidden shadow-md mb-6`}>
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent"></div>
+                    <Star className="w-20 h-20 text-white animate-spin-slow z-10" />
+                    <div className="absolute top-3 right-3 bg-white/30 backdrop-blur-sm rounded-full p-2 z-10">
+                      <Trophy className="w-6 h-6 text-white animate-bounce-slow" />
+                    </div>
+                    <div className="absolute bottom-3 left-3 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 z-10">
+                      <span className="text-white text-base font-semibold">LEGEND</span>
+                    </div>
+                  </div>
+                  <h3 className="text-2xl text-center font-bold text-gray-800 mb-2">{selectedLegend.name}</h3>
+                  <p className="text-orange-600 text-center text-lg font-medium mb-4">{selectedLegend.years}</p>
+                  <ul className="mb-4 space-y-2">
+                    {selectedLegend.achievements.map((achieve, idx) => (
+                      <li key={idx} className="flex items-center text-base">
+                        <Trophy className="w-5 h-5 text-yellow-500 mr-2 animate-bounce-slow" />
                         <span className="text-gray-700">{achieve}</span>
                       </li>
                     ))}
                   </ul>
-                  <p className="text-gray-600 italic text-xs leading-snug bg-gradient-to-r from-yellow-50 to-orange-50 p-2 rounded-md">
-                    {legend.legacy}
+                  <p className="text-gray-600 italic text-base leading-snug bg-gradient-to-r from-yellow-50 to-orange-50 p-3 rounded-md text-center">
+                    {selectedLegend.legacy}
                   </p>
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
